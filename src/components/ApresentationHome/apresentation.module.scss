@@ -1,0 +1,80 @@
+.container{
+    width: 100%;
+    height: 100%;
+
+    margin-top: calc(228px - 80px);
+
+    .title{
+        width: 100%;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 48px;
+
+        strong{
+            font-size: 50px;
+            font-weight: 600;
+        }
+    }
+
+    .description{
+        font-size: 16px;
+        margin: 28px 0 38px 0;
+        line-height: 20px;
+        max-width: 427px;
+    }
+
+    .boxBot{
+        height: 93px;
+        max-width: 20rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        padding: 0 1rem;
+        border-radius: 15px;
+        margin-bottom: 131.31px;
+
+        background-color: var(--white);
+        cursor: pointer;
+        transition: transform 0.2s;
+        &:hover{
+            transition: transform 0.2s;
+            transform: scale(1.01);
+            img{
+                transform: scale(1.02);
+            }
+        }
+
+        p{
+            color: var(--black);
+            margin-left: 1rem;
+            font-family: 500;
+        }
+    }
+
+    .links{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        a{
+            cursor: pointer;
+            & + a{
+                margin-left: 1rem;
+            }
+
+            transition: transform 0.2s;
+            &:hover{
+                transform: scale(1.04);
+            }
+        }
+
+        img:nth-child(3){
+            margin-top: 0.3rem;
+        }
+        img:last-child{
+            margin-top: 0.2rem;
+        }
+    }
+}
