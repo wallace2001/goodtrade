@@ -20,13 +20,13 @@ export const BannerApresentation = () => {
                 </div>
             </header>
             <main className={styles.content}>
-                <h1 className={styles.title}>Exchange - Demo</h1>
+                <h1 className={styles.title}>Aposta Trades DEMO</h1>
                 <div className={styles.box}>
                     <div>
                         <input type="checkbox" id="comissao" />
                         <label htmlFor="comissao">Com comissão</label>
                     </div>
-                    <button type="button">CashOut + 1,33b</button>
+                    <button type="button" style={{color: 'var(--white)'}}>CashOut + 1,33b</button>
                 </div>
                 <TableHorizontal />
                 <TableVertical />

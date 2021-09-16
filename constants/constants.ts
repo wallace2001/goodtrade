@@ -9,8 +9,8 @@ export const TOOLS = [
         value: "resultados",
     },
     {
-        name: "Histórico",
-        value: "historico",
+        name: "Históricos",
+        value: "historicos",
     },
     {
         name: "Aposta trade",
@@ -205,5 +205,128 @@ export const GAME = [
         league: 'Football / England Premier League',
         time: '2nd Half 6.7"',
         live: true,
+    },
+];
+
+export const FOOTBALL = [
+    {
+        title: "Brasileiro Série B",
+        icon: '/flags/al.svg',
+        game: [
+                {
+                    team: [
+                        {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
+                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 75,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
+                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 75,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
+                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 75,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
+                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 75,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
+                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 75,
+                    live: true,
+                },
+            ],
+    },
+    {
+        title: "Brasileiro Série B",
+        icon: '/flags/br.svg',
+        game: [
+            {
+            team: [
+                {name: 'Fortaleza', goals: 3, icon: '/icons/fortaleza.svg'},
+                {name: 'Ceará', goals: 1, icon: '/icons/ceara.svg'},
+            ],
+            league: 'Brasileiro Série B',
+            time: 50,
+            live: true,
+        },
+            {
+            team: [
+                {name: 'Fortaleza', goals: 3, icon: '/icons/fortaleza.svg'},
+                {name: 'Ceará', goals: 1, icon: '/icons/ceara.svg'},
+            ],
+            league: 'Brasileiro Série B',
+            time: 50,
+            live: true,
+        },
+            {
+            team: [
+                {name: 'Fortaleza', goals: 3, icon: '/icons/fortaleza.svg'},
+                {name: 'Ceará', goals: 1, icon: '/icons/ceara.svg'},
+            ],
+            league: 'Brasileiro Série B',
+            time: 50,
+            live: true,
+        },
+            {
+            team: [
+                {name: 'Fortaleza', goals: 3, icon: '/icons/fortaleza.svg'},
+                {name: 'Ceará', goals: 1, icon: '/icons/ceara.svg'},
+            ],
+            league: 'Brasileiro Série B',
+            time: 50,
+            live: true,
+        },
+            {
+            team: [
+                {name: 'Fortaleza', goals: 3, icon: '/icons/fortaleza.svg'},
+                {name: 'Ceará', goals: 1, icon: '/icons/ceara.svg'},
+            ],
+            league: 'Brasileiro Série B',
+            time: 50,
+            live: true,
+        },
+            {
+            team: [
+                {name: 'Fortaleza', goals: 3, icon: '/icons/fortaleza.svg'},
+                {name: 'Ceará', goals: 1, icon: '/icons/ceara.svg'},
+            ],
+            league: 'Brasileiro Série B',
+            time: 50,
+            live: true,
+        },
+            {
+            team: [
+                {name: 'Fortaleza', goals: 3, icon: '/icons/fortaleza.svg'},
+                {name: 'Ceará', goals: 1, icon: '/icons/ceara.svg'},
+            ],
+            league: 'Brasileiro Série B',
+            time: 50,
+            live: true,
+        },
+    ],
     },
 ];

@@ -60,13 +60,13 @@
 
     :global{
         .ant-select-selector{
-            background-color: transparent;
-            border: none;
-            color: var(--black);
+            background-color: transparent !important;
+            border: none !important;
+            color: var(--white);
             padding: 0 1rem;
         }
         .ant-select-arrow{
-            color: var(--black);
+            color: var(--white);
         }
     }
 

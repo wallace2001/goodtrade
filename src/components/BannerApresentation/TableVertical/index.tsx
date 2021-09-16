@@ -44,7 +44,7 @@ export const TableVertical = () => {
 
     return (
         <div className={styles.container}>
-            <h4>Punter - Demo</h4>
+            <h4>Apostas Punter DEMO</h4>
 
             <div style={{
                 width: '100%',
