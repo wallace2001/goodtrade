@@ -67,7 +67,7 @@
                         width: 6px;
                         height: 1.3rem;
                         border-radius: 30rem;
-                        background-color: red;
+                        background-color: var(--red-800);
                     }
                 }
 
@@ -91,8 +91,8 @@
                     width: 4rem;
                     height: 100%;
 
-                    background: rgba(34, 210, 126, 0.3);
-                    color: rgba(34, 210, 126);
+                    background: var(--green-700-transparent);
+                    color: var(--green-700);
 
                     font-weight: 600;
 
@@ -105,8 +105,8 @@
                     width: 4rem;
                     height: 100%;
 
-                    background: rgba(237, 41, 57, 0.2);
-                    color: rgba(237, 41, 57);
+                    background: var(--red-800-transparent);
+                    color: var(--red-800);
 
                     font-weight: 600;
                     font-size: 18px;

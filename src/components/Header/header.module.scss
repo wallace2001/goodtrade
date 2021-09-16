@@ -278,6 +278,10 @@
                     background-color: transparent;
                     border: none;
                     color: var(--white);
+                    padding: 0 1rem;
+                }
+                .ant-select-arrow{
+                    color: var(--white);
                 }
             }
         }

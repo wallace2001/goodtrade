@@ -1,6 +1,5 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { HiMenu } from 'react-icons/hi';
-import { AiOutlinePlus } from 'react-icons/ai';
 import { Select  } from 'antd';
 import { FLAGS, TOOLS } from '../../../constants/constants';
 import { getContext } from '../../context/context.global';
@@ -67,50 +66,22 @@ export const Header = ({haveBackground}: PropsHeader) => {
                     </Select>
                 </div>
                 <div className={styles.right}>
-                    <div
-                        className={styles.moreOptions}
-                    >
-                        <AiOutlinePlus
-                            size={10}
-                            color="#fff"
-                            style={{
-                                marginRight: '0.2rem',
-                                cursor: 'pointer',
-                            }}
-                        />
-                        <Select
-                            defaultValue={tools}
-                            onChange={changeTools}
-                            showArrow={false}
-                            dropdownStyle={{
-                                backgroundColor: 'rgba(255,255,255,.7)',
-                            }}
-                        >
-                            {TOOLS.map(item => (
-                                <Select.Option
-                                    key={item.value}
-                                    value={item.value}
-                                >
-                                    {item.name}
-                                </Select.Option>
-                            ))}
-                        </Select>
-                    </div>
-                    {/* <Select
-                        defaultValue={tools} 
+                    <Select
+                        defaultValue={tools}
                         onChange={changeTools}
                         dropdownStyle={{
-                            backgroundColor: 'rgba(255,255,255,.5)',
+                            backgroundColor: 'rgba(255,255,255,.7)',
                         }}
                     >
-                    {TOOLS.map((item, index) => {
-                        return(
-                                <Select.Option
-                                    key={index}
-                                    value={item.value}>{item.name}</Select.Option>
-                                );
-                            })}
-                    </Select> */}
+                        {TOOLS.map(item => (
+                            <Select.Option
+                                key={item.value}
+                                value={item.value}
+                            >
+                                {item.name}
+                            </Select.Option>
+                        ))}
+                    </Select>
                     <button disabled={true}>Entrar</button>
                     <button>Login</button>
                 </div>

@@ -29,28 +29,6 @@ export const DrawerMobile = ({ isVisible, handleChangeDrawerMobileVisible }: Pro
                     onClick={handleChangeDrawerMobileVisible}
                 />
             </div>
-            <div className={styles.content}>
-                    {/* {HEADER.map((item, index) => {
-                        return (
-                            item.info === 'select' ? (
-                                <select key={index}>
-                                    {item.options?.map((subItem, index) => 
-                                        <option
-                                            key={index}
-                                            value={subItem.value}
-                                        >
-                                        {subItem.name}
-                                        </option>
-                                    )}
-                                </select>
-                            ) : (
-                                <button key={index} disabled={item.name === 'Login'}>
-                                    {item.name}
-                                </button>
-                            )
-                        );
-                    })} */}
-            </div>
         </animated.div>
     ) : (
         <animated.div style={{
