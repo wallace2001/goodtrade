@@ -85,7 +85,7 @@ export const TableVertical = () => {
                     </div>
                 </div>
                 <div className={styles.contentCut}>
-                    <img src="/icons/hand_2.png" />
+                    {/* <img src="/icons/hand_2.png" /> */}
                     {results.map(item => (
                         <div key={item.value} style={
                             item.checked ? {backgroundColor: 'rgba(34, 210, 126, 0.2)'} : {backgroundColor: 'rgba(16, 16, 16, 0.2)'}

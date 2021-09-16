@@ -125,10 +125,11 @@
                     flex: 1;
                     margin-left: 2rem;
                     border-radius: 7px;
+                    padding: 0 0.5rem;
 
                     display: flex;
                     align-items: center;
-                    justify-content: space-around;
+                    justify-content: center;
 
                     background: linear-gradient(149.43deg, rgba(0, 43, 73, 0.8) 20.12%, rgba(0, 149, 255, 0.1) 98.85%);
                     border: 1px solid rgba(255, 255, 255, .15);
@@ -154,9 +155,12 @@
                     }
 
                     p{
+                        width: 100%;
                         margin-top: 0.8rem;
                         font-weight: 500;
                         font-size: 17px;
+                        margin-left: 1.1rem;
+                        // padding: 0 0.5rem;
                     }
                 }
             }

@@ -76,6 +76,10 @@
         display: flex;
         flex-direction: column;
 
+        .title{
+            color: var(--white);
+        }
+
         .box{
             display: flex;
             align-items: center;

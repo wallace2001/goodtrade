@@ -43,14 +43,17 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                                 <div>
                                     <h2>{idx + 1}</h2>
                                     <h4 style={{
-                                        marginLeft: '0.4rem'
+                                        marginLeft: '0.4rem',
+                                        color: 'var(--white)',
                                     }}>{value[0]} <strong>{value[1]}</strong></h4>
                                 </div>
                                 <h3 style={{color: 'var(--green-100)'}}>{item.percentPlayers}</h3>
                             </button>
                             :
                             <button className={styles.buttonTable}>
-                                <h4>{value[0]} <strong>{value[1]}</strong></h4>
+                                <h4 style={{
+                                    color: 'var(--white)'
+                                }}>{value[0]} <strong>{value[1]}</strong></h4>
                             </button>
                         );
                     })
@@ -72,7 +75,9 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                             const value = FilteredNames(item);
                             return (
                                 <button className={styles.buttonTable}>
-                                    <h4>{value[0]} <strong>{value[1]}</strong></h4>
+                                    <h4 style={{
+                                        color: 'var(--white)',
+                                    }}>{value[0]} <strong>{value[1]}</strong></h4>
                                 </button>
                             );
                         })}

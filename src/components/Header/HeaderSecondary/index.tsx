@@ -40,7 +40,7 @@ export const HeaderSecondary = () => {
                 <BiSearchAlt2
                     size={25}
                     cursor="pointer"
-                />
+                    color="var(--white)" />
                 <img style={{margin: '0 1rem'}} src="/icons/gear.svg" alt="Options" />
                 <img style={{width: '34px', height: '34px'}} src="/icons/light.svg" />
             </div>
