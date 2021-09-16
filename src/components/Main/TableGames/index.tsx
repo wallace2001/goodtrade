@@ -1,6 +1,7 @@
 import { Progress } from 'antd';
 import React, { useState } from 'react';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import { FilteredNames } from '../../utils/Filter';
 import styles from './index.module.scss';
 
 interface TableGamesProps{
@@ -20,6 +21,7 @@ interface TableGamesProps{
 
 export const TableGames = ({item}: TableGamesProps) => {
     const [showMore, setShowMore] = useState<boolean>(false);
+    const title = FilteredNames({title: item.title});
 
     const handleChangeShowMore = () => {
         setShowMore(prevState => !prevState);
@@ -30,7 +32,7 @@ export const TableGames = ({item}: TableGamesProps) => {
             <button onClick={handleChangeShowMore}>
                 <div>
                     <img src={item.icon} />
-                    <p>{item.title}</p>
+                    <p>{title[0]} <strong>{title[1]}</strong></p>
                 </div>
 
                 <a>Classificações ao vivo</a>
