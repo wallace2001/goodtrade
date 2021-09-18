@@ -16,6 +16,7 @@ export const Header = ({haveBackground}: PropsHeader) => {
 
     const {
         tools,
+        ecram,
         changeTools
      } = getContext();
 
@@ -28,8 +29,18 @@ export const Header = ({haveBackground}: PropsHeader) => {
         setIsDrawerMobileVisible(prevState => !prevState);
     };
 
+    const backgroundStyles = {
+        background: ecram.scroll >= 80 || haveBackground ?
+        "linear-gradient(90deg, rgba(1,68,116,1) 0%, rgba(0,214,243,0.78) 11%, rgba(1,68,116,1) 31%)"  :
+        haveBackground ?
+        "rgba(1,68,116, .5);" :
+        "transparent"
+        };
+
     return (
-        <div className={haveBackground ? styles.container : styles.containerNoBackground}>
+        <div
+            style={{...backgroundStyles, position: 'sticky', top: 0, zIndex: 999}}
+            className={styles.container}>
             <div className={styles.content}>
                 <div className={styles.left}>
                     <h4>ApostaMelhor</h4>
@@ -45,7 +56,6 @@ export const Header = ({haveBackground}: PropsHeader) => {
                         onChange={changeLanguage}
                     >
                         {FLAGS.map((item, index) => {
-                            console.log(`${item.icon}${item.value}.svg`);
                             return (
                                 <Select.Option style={{
                                         display: 'flex',

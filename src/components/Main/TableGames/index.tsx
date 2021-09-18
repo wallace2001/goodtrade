@@ -6,6 +6,7 @@ import styles from './index.module.scss';
 
 interface TableGamesProps{
     item: {
+        id: string;
         title: string;
         icon: string;
         game: {
@@ -26,6 +27,10 @@ export const TableGames = ({item}: TableGamesProps) => {
     const handleChangeShowMore = () => {
         setShowMore(prevState => !prevState);
     };
+
+    if (!item){
+        return null;
+    }
 
     return (
         <div className={styles.container}>
@@ -62,8 +67,8 @@ export const TableGames = ({item}: TableGamesProps) => {
                 !showMore ? {display: 'none'} :
                 {display: 'flex'}
             }>
-                {item.game.map(item => (
-                    <div className={styles.game}>
+                {item.game.map((item, idx) => (
+                    <div key={idx} className={styles.game}>
                         <img className={styles.star} style={{
                             width: '20px',
                             height: '20px'
@@ -92,10 +97,11 @@ export const TableGames = ({item}: TableGamesProps) => {
                                 }}
                                 style={{
                                     marginLeft: '1rem',
-                                    color: '#fff'
+                                    color: '#fff',
+                                    zIndex: 0,
                                 }}
-                                width={50}
-                                percent={item.time}
+                                width={40}
+                                percent={50}
                                 format={percent => `${percent}"`}
                             />
                         </div>

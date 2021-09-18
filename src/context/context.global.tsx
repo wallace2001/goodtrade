@@ -1,22 +1,40 @@
 import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+import { changeCategory } from '../store/action/categorie';
 
 interface ContextProps{
     tools: string;
     language: string;
-    tamWidth: number;
+    ecram: PropsEcram;
+    categorie: string;
     changeLanguage: (value: string) => void;
     changeTools: (value: string) => void;
+    changeCategories: (value: string) => void;
 }
+
+interface PropsEcram{
+    width: number;
+    height: number;
+    scroll: number,
+}
+
 interface ProviderProps{
     children: ReactNode;
 }
 
-export const Context = createContext({} as ContextProps);
+export const GlobalContext = createContext({} as ContextProps);
 
-export const Provider = ({children}: ProviderProps) => {
+export const GlobalProvider = ({children}: ProviderProps) => {
     const [tools, setTools] = useState<string>('ferramentas');
-    const [tamWidth, setTamWidth] = useState<number>(0);
+    const [ecram, setTamEcram] = useState<PropsEcram>({
+        width: 0,
+        height: 0,
+        scroll: 0,
+    });
     const [language, setLanguage] = useState<string>('br');
+
+    const dispatch = useDispatch();
+    const { categorie } = useSelector((state: RootStateOrAny) => state.categoryReducer);
 
     const changeTools = (tool: string) => {
         setTools(tool);
@@ -26,23 +44,40 @@ export const Provider = ({children}: ProviderProps) => {
         setLanguage(value);
     }
 
+    const changeCategories = (categorie: string) => {
+        dispatch(changeCategory(categorie));
+    };
+
+    useEffect(() => {
+        window.onscroll = () => setTamEcram({
+            ...ecram,
+            scroll: document.documentElement.scrollTop,
+        });
+    }, []);
+
     useEffect(() => {
         document.body.onresize = () => {
-          setTamWidth(document.body.clientWidth);
+          setTamEcram({
+              ...ecram,
+              width: document.body.clientWidth,
+              height: document.body.clientHeight,
+          });
         }
       }, []);
 
     return(
-        <Context.Provider value={{
+        <GlobalContext.Provider value={{
             tools,
             language,
-            tamWidth,
+            ecram,
+            categorie,
             changeLanguage,
+            changeCategories,
             changeTools,
         }}>
             {children}
-        </Context.Provider>
+        </GlobalContext.Provider>
     );
 }
 
-export const getContext = () => useContext(Context);
+export const getContext = () => useContext(GlobalContext);

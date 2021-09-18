@@ -36,8 +36,8 @@ export const TableHorizontal = () => {
 
             <div className={styles.content}>
                 <img src="/icons/hand.png" />
-                {results.map(item => (
-                    <div key={item.name} className={styles.box}>
+                {results.map((item, idx) => (
+                    <div key={idx} className={styles.box}>
                         <div>
                             <div>
                                 <label style={item.red ? {backgroundColor: 'var(--red-800)'} : {backgroundColor: 'var(--green-100)'}} />

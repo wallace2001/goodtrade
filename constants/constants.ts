@@ -62,33 +62,6 @@ export const LINKS = [
     },
 ];
 
-export const HEADERS = [
-    {
-        name: "Favoritos",
-        icon: "/icons/tenis.svg",
-    },
-    {
-        name: "Futebol",
-        icon: "/icons/futbol.svg",
-    },
-    {
-        name: "Tênis",
-        icon: "/icons/tenis.svg",
-    },
-    {
-        name: "Basquetebol",
-        icon: "/icons/basket.svg",
-    },
-    {
-        name: "Hóquei",
-        icon: "/icons/hoquei.svg",
-    },
-    {
-        name: "Handbol",
-        icon: "/icons/handbol.svg",
-    },
-];
-
 export const MY_LEAGUES = [
     {
         title: 'CONMEBOL Libertadores',
@@ -210,8 +183,9 @@ export const GAME = [
 
 export const FOOTBALL = [
     {
-        title: "Brasileiro Série B",
-        icon: '/flags/al.svg',
+        id: '1',
+        title: "Alemanhã 3ª Liga",
+        icon: '/flags/de.svg',
         game: [
                 {
                     team: [
@@ -261,6 +235,7 @@ export const FOOTBALL = [
             ],
     },
     {
+        id: '2',
         title: "Brasileiro Série B",
         icon: '/flags/br.svg',
         game: [
@@ -328,5 +303,133 @@ export const FOOTBALL = [
             live: true,
         },
     ],
+    },
+];
+
+export const BASKETBALL = [
+    {
+        id: '1',
+        title: "NBA Liga Americana",
+        icon: '/flags/usa.svg',
+        game: [
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: '08:19 3st Q.',
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: '08:19 3st Q.',
+                    live: true,
+                },
+            ],
+    },
+    {
+        id: '2',
+        title: "NBA Liga Americana",
+        icon: '/flags/usa.svg',
+        game: [
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: '08:19 3st Q.',
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: '08:19 3st Q.',
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: '08:19 3st Q.',
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: '08:19 3st Q.',
+                    live: true,
+                },
+            ],
+    },
+];
+
+export const HEADERS = [
+    {
+        name: "Favoritos",
+        value: "favoritos",
+        link: null,
+        icon: "/icons/tenis.svg",
+    },
+    {
+        name: "Futebol",
+        value: "football",
+        link: FOOTBALL,
+        icon: "/icons/futbol.svg",
+    },
+    {
+        name: "Tênis",
+        value: "tenis",
+        link: null,
+        icon: "/icons/tenis.svg",
+    },
+    {
+        name: "Basquetebol",
+        value: "basketball",
+        link: BASKETBALL,
+        icon: "/icons/basket.svg",
+    },
+    {
+        name: "Hóquei",
+        value: "hoquei",
+        link: null,
+        icon: "/icons/hoquei.svg",
+    },
+    {
+        name: "Handbol",
+        value: "handball",
+        link: null,
+        icon: "/icons/handbol.svg",
     },
 ];

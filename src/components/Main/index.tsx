@@ -3,13 +3,19 @@ import { BsPlus } from 'react-icons/bs';
 import { FaFacebookF, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ImInstagram } from 'react-icons/im';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { BEST_TIPSTER, COUNTRIES, FOOTBALL, GAME, HEADER_GAME, MY_LEAGUES } from '../../../constants/constants';
+import { BEST_TIPSTER, COUNTRIES, FOOTBALL, GAME, HEADERS, HEADER_GAME, MY_LEAGUES } from '../../../constants/constants';
+import { getContext } from '../../context/context.global';
 import { Box } from './Box';
 import { GameScrollList } from './GameScrollList';
 import styles from './index.module.scss';
 import { TableGames } from './TableGames';
 
 export const Main = () => {
+
+    const {
+        categorie,
+    } = getContext();
+
     return (
         <div className={styles.container}>
             <div className={styles.content}>
@@ -58,8 +64,8 @@ export const Main = () => {
                     <div className={styles.right}>
                         <header>
                             <div className={styles.headerGame}>
-                                {HEADER_GAME.map(item => (
-                                    <button key={item.name}>
+                                {HEADER_GAME.map((item, idx) => (
+                                    <button key={idx}>
                                         <p key={item.name}>{item.name}</p>
                                         {item.name === 'Todos' && <div />}
                                     </button>
@@ -88,13 +94,19 @@ export const Main = () => {
                                 <header>
                                     <img src="/images/background_title.svg" alt="header"/>
                                     <div>
-                                        <p>Futebol</p>
+                                        <p>{HEADERS.find(title => {
+                                            return title.value === categorie;
+                                        })?.name}</p>
                                     </div>
                                 </header>
-                                {FOOTBALL.map(item => (
-                                    <TableGames
-                                        item={item}
-                                    />
+                                {HEADERS.map(link => (
+                                    link.value === categorie &&
+                                    link.link !== null &&
+                                    link.link.map(item => (
+                                        <TableGames
+                                            item={item}
+                                        />
+                                    ))
                                 ))}
                             </div>
                         </main>

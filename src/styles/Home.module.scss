@@ -3,23 +3,30 @@
   height: 100%;
 
   background-image: url('/images/background_light.png');
-  background-size: 100%;
+  background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
 
   transition: background-image 0.2s;
-  
-  @media (max-width: 1370px){
-    background-image: url('/images/background_light_2.png');
+
+  @media (max-width: 720px){
+    background-image: url('/images/background_mobile.png');
+  }
+
+  .substract{
+    width: 100%;
+    height: 100%;
+
+    background-image: url('/images/substract.png');
     background-size: 100% 100%;
-  }
-  @media (max-width: 600px){
-    background-image: url('/images/background_light_mobile.png');
-  }
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  };
 
   .content{
     width: 100%;
     height: 100%;
-    padding: 120px 111px;
+    padding: 50px 111px;
 
     display: flex;
     justify-content: space-between;

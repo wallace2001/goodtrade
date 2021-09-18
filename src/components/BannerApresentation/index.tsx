@@ -20,7 +20,7 @@ export const BannerApresentation = () => {
                 </div>
             </header>
             <main className={styles.content}>
-                <h1 className={styles.title}>Aposta Trades DEMO</h1>
+                <h1 className={styles.title}>Apostas Exchange - DEMO</h1>
                 <div className={styles.box}>
                     <div>
                         <input type="checkbox" id="comissao" />

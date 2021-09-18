@@ -1,9 +1,13 @@
-.container{
+.containera{
     width: 100%;
     height: 70px;
 
     background: rgb(1,68,116);
     background: linear-gradient(90deg, rgba(1,68,116,1) 0%, rgba(0,214,243,0.78) 11%, rgba(1,68,116,1) 31%);
+
+    transition: background 0.2s;
+
+    z-index: 999;
 
     .content{
         width: 100%;
@@ -149,10 +153,10 @@
     }
 }
 
-.containerNoBackground{
+.container{
     width: 100%;
     height: 70px;
-    position: absolute;
+    position: fixed;
 
     .content{
         width: 100%;

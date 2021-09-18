@@ -10,16 +10,18 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Home | GoodTrade</title>
-      </Head>
-      <Header haveBackground={false} />
-      <main className={styles.content}>
-        <ApresentationHome />
-        <BannerApresentation />
-      </main>
-      <HeaderSecondary />
-      <Main />
+      <div className={styles.substract}>
+        <Head>
+          <title>Home | GoodTrade</title>
+        </Head>
+        <Header haveBackground={false} />
+        <main className={styles.content}>
+          <ApresentationHome />
+          <BannerApresentation />
+        </main>
+        <HeaderSecondary />
+        <Main />
+      </div>
     </div>
   )
 }

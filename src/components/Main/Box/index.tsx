@@ -37,7 +37,7 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                         const value = FilteredNames(item);
                         return (
                             item.percentPlayers ?
-                            <button className={styles.buttonTable} disabled={true} style={{
+                            <button key={idx} className={styles.buttonTable} disabled={true} style={{
                                 justifyContent: 'space-between'
                             }}>
                                 <div>
@@ -50,7 +50,7 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                                 <h3 style={{color: 'var(--green-100)'}}>{item.percentPlayers}</h3>
                             </button>
                             :
-                            <button className={styles.buttonTable}>
+                            <button key={idx} className={styles.buttonTable}>
                                 <h4 style={{
                                     color: 'var(--white)'
                                 }}>{value[0]} <strong>{value[1]}</strong></h4>
@@ -71,10 +71,10 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                                 size={23}
                             />
                         </div>
-                        {item?.map((item) => {
+                        {item?.map((item, idx) => {
                             const value = FilteredNames(item);
                             return (
-                                <button className={styles.buttonTable}>
+                                <button key={idx} className={styles.buttonTable}>
                                     <h4 style={{
                                         color: 'var(--white)',
                                     }}>{value[0]} <strong>{value[1]}</strong></h4>

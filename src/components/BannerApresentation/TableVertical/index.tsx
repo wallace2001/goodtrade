@@ -44,7 +44,7 @@ export const TableVertical = () => {
 
     return (
         <div className={styles.container}>
-            <h4>Apostas Punter DEMO</h4>
+            <h4>Apostas Punter - DEMO</h4>
 
             <div style={{
                 width: '100%',
@@ -86,8 +86,8 @@ export const TableVertical = () => {
                 </div>
                 <div className={styles.contentCut}>
                     {/* <img src="/icons/hand_2.png" /> */}
-                    {results.map(item => (
-                        <div key={item.value} style={
+                    {results.map((item, idx) => (
+                        <div key={idx} style={
                             item.checked ? {backgroundColor: 'rgba(34, 210, 126, 0.2)'} : {backgroundColor: 'rgba(16, 16, 16, 0.2)'}
                         }>
                             <header>{item.name}</header>

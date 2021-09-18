@@ -27,8 +27,8 @@ export const GameScrollList = ({ title: titleNo, item }: PropsGameScroll) => {
                 <a href="#">Ver mais</a>
             </header>
             <div className={styles.list}>
-                {item.map(item => (
-                    <div className={styles.box}>
+                {item.map((item, idx) => (
+                    <div key={idx} className={styles.box}>
                         <div className={styles.inLive}>
                             {item.live && <p>Live</p>}
                         </div>
@@ -46,8 +46,8 @@ export const GameScrollList = ({ title: titleNo, item }: PropsGameScroll) => {
                             />
                             <p>{item.league}</p>
 
-                            {item.team.map(team => (
-                                <label key={team.name}>
+                            {item.team.map((team, idx) => (
+                                <label key={idx}>
                                     <strong>{team.name}</strong>
                                     <strong>{team.goals}</strong>
                                 </label>

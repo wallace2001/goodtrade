@@ -5,6 +5,11 @@
     align-items: center;
     padding: 0 6.93rem;
 
+    position: sticky;
+    top: 70px;
+
+    z-index: 3;
+
     background-color: var(--blue-550);
 
     .cardBox{
@@ -25,6 +30,8 @@
             p{
                 margin-top: 0.75rem;
                 margin-left: 0.3rem;
+                font-size: 16px;
+                line-height: 19.5px;
             }
 
             img{
