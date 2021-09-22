@@ -16,15 +16,15 @@ interface TableGamesProps{
                 name: string; goals: number; icon: string;
             }[];
             league: string;
-            time: number;
+            time: number | string;
             live: boolean;
         }[];
-    };
+    } | null;
 }
 
 export const TableGames = ({item}: TableGamesProps) => {
     const [showMore, setShowMore] = useState<boolean>(false);
-    const title = FilteredNames({title: item.title});
+    const title = FilteredNames({title: item?.title});
 
     const {
         darkMode,
@@ -34,7 +34,7 @@ export const TableGames = ({item}: TableGamesProps) => {
         setShowMore(prevState => !prevState);
     };
 
-    if (!item){
+    if (item === null){
         return null;
     }
 
@@ -45,9 +45,9 @@ export const TableGames = ({item}: TableGamesProps) => {
                     <img src={item.icon} />
                     <p style={{
                         ...light.word
-                    }}>{title[0]} <strong style={{
+                    }}>{title && title[0]} <strong style={{
                         ...light.word,
-                    }}>{title[1]}</strong></p>
+                    }}>{title && title[1]}</strong></p>
                 </div>
 
                 <a>Classificações ao vivo</a>

@@ -18,6 +18,15 @@
 
         border-bottom: 1px solid var(--light);
 
+        a{
+            color: var(--blue-100);
+            transition: color 1s;
+
+            &:hover{
+                color: var(--blue-140);
+            }
+        }
+
         div{
             display: flex;
             align-items: center;
