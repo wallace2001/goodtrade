@@ -61,7 +61,7 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                                     <h4 style={{
                                         marginLeft: '0.4rem',
                                         color: 'var(--light)',
-                                    }}>{value[0]} <strong>{value[1]}</strong></h4>
+                                    }}>{value && value[0]} <strong>{value && value[1]}</strong></h4>
                                 </div>
                                 <h3 style={{color: 'var(--green-100)'}}>{item.percentPlayers}</h3>
                             </button>
@@ -69,9 +69,9 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                             <button key={idx} className={styles.buttonTable}>
                                 <h4 style={{
                                     color: 'var(--light)'
-                                }}>{value[0]} <strong style={{
+                                }}>{value && value[0]} <strong style={{
                                     ...light.word,
-                                }}>{value[1]}</strong></h4>
+                                }}>{value && value[1]}</strong></h4>
                             </button>
                         );
                     })
@@ -95,9 +95,9 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                                 <button key={idx} className={styles.buttonTable}>
                                     <h4 style={{
                                         color: 'var(--light)',
-                                    }}>{value[0]} <strong style={{
+                                    }}>{ value && value[0]} <strong style={{
                                         ...light.word,
-                                    }}>{value[1]}</strong></h4>
+                                    }}>{value && value[1]}</strong></h4>
                                 </button>
                             );
                         })}

@@ -31,9 +31,9 @@ export const GameScrollList = ({ title: titleNo, item }: PropsGameScroll) => {
             <header>
                 <h4 style={{
                     ...light.word
-                }}>{title[0]} <strong style={{
+                }}>{title && title[0]} <strong style={{
                     ...light.word
-                }}>{title[1]}</strong></h4>
+                }}>{ title && title[1]}</strong></h4>
                 <a href="#">Ver mais</a>
             </header>
             <div className={styles.list}>
