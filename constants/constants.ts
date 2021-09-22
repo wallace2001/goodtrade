@@ -46,19 +46,23 @@ export const FLAGS = [
 export const LINKS = [
     {
         name: "bet365",
-        icon: "/links/bet365.png",
+        iconDark: "/links/dark/bet365.png",
+        iconLight: "/links/light/bet365.svg",
     },
     {
         name: "betfair",
-        icon: "/links/betfair.png",
+        iconDark: "/links/dark/betfair.png",
+        iconLight: "/links/light/betfair.svg",
     },
     {
         name: "betway",
-        icon: "/links/betway.png",
+        iconDark: "/links/dark/betway.png",
+        iconLight: "/links/light/betway.svg",
     },
     {
         name: "sportingbet",
-        icon: "/links/sportingbet.png",
+        iconDark: "/links/dark/sportingbet.png",
+        iconLight: "/links/light/sportingbet.svg",
     },
 ];
 
@@ -400,36 +404,42 @@ export const HEADERS = [
         name: "Favoritos",
         value: "favoritos",
         link: null,
-        icon: "/icons/tenis.svg",
+        iconDark: "/icons/dark/tenis.svg",
+        iconLight: "/icons/light/tenis.svg",
     },
     {
         name: "Futebol",
         value: "football",
         link: FOOTBALL,
-        icon: "/icons/futbol.svg",
+        iconDark: "/icons/dark/futbol.svg",
+        iconLight: "/icons/light/futbol.svg",
     },
     {
         name: "Tênis",
         value: "tenis",
         link: null,
-        icon: "/icons/tenis.svg",
+        iconDark: "/icons/dark/tenis.svg",
+        iconLight: "/icons/light/tenis.svg",
     },
     {
         name: "Basquetebol",
         value: "basketball",
         link: BASKETBALL,
-        icon: "/icons/basket.svg",
+        iconDark: "/icons/dark/basket.svg",
+        iconLight: "/icons/light/basket.svg",
     },
     {
         name: "Hóquei",
         value: "hoquei",
         link: null,
-        icon: "/icons/hoquei.svg",
+        iconDark: "/icons/dark/hoquei.svg",
+        iconLight: "/icons/light/hoquei.svg",
     },
     {
         name: "Handbol",
         value: "handball",
         link: null,
-        icon: "/icons/handbol.svg",
+        iconDark: "/icons/dark/handbol.svg",
+        iconLight: "/icons/light/handbol.svg",
     },
 ];

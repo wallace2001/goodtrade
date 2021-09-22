@@ -1,15 +1,31 @@
 import React from 'react';
 import { LINKS } from '../../../constants/constants';
+import { light } from '../../../constants/theme';
+import { getContext } from '../../context/context.global';
 import styles from './apresentation.module.scss';
 
 export const ApresentationHome = () => {
+
+    const {
+        darkMode,
+    } = getContext();
+
     return (
         <div className={styles.container}>
-            <p className={styles.title}>
-                Amplie seus <br /> <strong>Resultados</strong> <br /> com nossos bots!
+            <p style={{
+                ...light.word,
+            }} className={styles.title}>
+                Amplie seus <br /> <strong style={{
+                    ...light.word
+                }}>Resultados</strong> <br /> com nossos bots!
             </p>
 
-            <p className={styles.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            <p
+                className={styles.description}
+                style={{
+                    ...light.word,
+                }}
+            >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 
             <div className={styles.boxBot}>
                 <img src='/icons/button_home.png' />
@@ -20,7 +36,7 @@ export const ApresentationHome = () => {
                 {LINKS.map((item, index) => {
                     return(
                         <a href={`#${item.name}`} key={index}>
-                            <img key={index} src={item.icon} />
+                            <img key={index} src={!darkMode ? item.iconDark : item.iconLight} />
                         </a>
                     );
                 })}

@@ -5,11 +5,14 @@ import { BiSearchAlt2 } from 'react-icons/bi';
 import { HEADERS } from '../../../../constants/constants';
 import styles from './index.module.scss';
 import { getContext } from '../../../context/context.global';
+import { light } from '../../../../constants/theme';
 
 export const HeaderSecondary = () => {
 
     const {
+        darkMode,
         changeCategories,
+        changeDarkmode,
     } = getContext();
 
     return (
@@ -21,7 +24,7 @@ export const HeaderSecondary = () => {
                         className={styles.box}
                         key={idx}
                     >
-                        <img src={item.icon} alt={item.name} />
+                        <img src={darkMode ? item.iconLight : item.iconDark} alt={item.name} />
                         <p>{item.name}</p>
                     </div>
                 ))}
@@ -34,7 +37,8 @@ export const HeaderSecondary = () => {
                 }}
                 style={{
                     marginRight: '1rem',
-                    marginLeft: '4rem'
+                    marginLeft: '4rem',
+                    ...light.word,
                 }}
             >
                 {HEADERS.map(item => (
@@ -50,9 +54,17 @@ export const HeaderSecondary = () => {
                 <BiSearchAlt2
                     size={25}
                     cursor="pointer"
-                    color="var(--white)" />
-                <img style={{margin: '0 1rem'}} src="/icons/gear.svg" alt="Options" />
-                <img style={{width: '34px', height: '34px'}} src="/icons/light.svg" />
+                    color="var(--button-color-gear)" />
+                <img
+                    style={{margin: '0 1rem'}}
+                    src={darkMode ? "/icons/light/gear.svg" : "/icons/dark/gear.svg"}
+                    alt="Options"
+                />
+                <img
+                    style={{width: '21px', height: '21px'}}
+                    src={darkMode ? "/icons/light/dark.svg" : "/icons/dark/light.svg"}
+                    onClick={changeDarkmode}
+                />
             </div>
         </div>
     )

@@ -51,7 +51,7 @@
 
             border-radius: 15px;
 
-            background: rgba(16, 16, 16, 0.2);
+            background: var(--background-demo-home);
 
             & + div{
                 margin-top: 0.5rem;

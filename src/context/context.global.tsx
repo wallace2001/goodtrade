@@ -7,9 +7,11 @@ interface ContextProps{
     language: string;
     ecram: PropsEcram;
     categorie: string;
+    darkMode: boolean;
     changeLanguage: (value: string) => void;
     changeTools: (value: string) => void;
     changeCategories: (value: string) => void;
+    changeDarkmode: () => void;
 }
 
 interface PropsEcram{
@@ -32,9 +34,27 @@ export const GlobalProvider = ({children}: ProviderProps) => {
         scroll: 0,
     });
     const [language, setLanguage] = useState<string>('br');
+    const [darkMode, setDarkMode] = useState<boolean>(false);
+    const [isBigger80, setIsBigger80] = useState<boolean>(false);
 
     const dispatch = useDispatch();
     const { categorie } = useSelector((state: RootStateOrAny) => state.categoryReducer);
+
+    const getTamScroll = () => {
+        const $html = document.querySelector('html');
+        if (isBigger80){
+            if (ecram.scroll < 80){
+                $html?.classList.remove('ecram');
+                setIsBigger80(false);
+            }
+            return;
+        } else {
+            if (ecram.scroll > 80){
+                $html?.classList.add('ecram');
+                setIsBigger80(true);
+            }
+        }
+    };
 
     const changeTools = (tool: string) => {
         setTools(tool);
@@ -48,12 +68,22 @@ export const GlobalProvider = ({children}: ProviderProps) => {
         dispatch(changeCategory(categorie));
     };
 
+    const changeDarkmode = () => {
+        setDarkMode(prevState => !prevState);
+        const $html = document.querySelector('html');
+        $html?.classList.toggle('dark-mode');
+    };
+    
     useEffect(() => {
         window.onscroll = () => setTamEcram({
             ...ecram,
             scroll: document.documentElement.scrollTop,
         });
     }, []);
+
+    useEffect(() => {
+        getTamScroll();
+    }, [ecram.scroll])
 
     useEffect(() => {
         document.body.onresize = () => {
@@ -71,9 +101,11 @@ export const GlobalProvider = ({children}: ProviderProps) => {
             language,
             ecram,
             categorie,
+            darkMode,
             changeLanguage,
             changeCategories,
             changeTools,
+            changeDarkmode,
         }}>
             {children}
         </GlobalContext.Provider>

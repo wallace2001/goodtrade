@@ -2,12 +2,21 @@
     width: 100%;
     height: 70px;
 
-    background: rgb(1,68,116);
-    background: linear-gradient(90deg, rgba(1,68,116,1) 0%, rgba(0,214,243,0.78) 11%, rgba(1,68,116,1) 31%);
-
     transition: background 0.2s;
 
     z-index: 999;
+
+            :global{
+            .ant-select-selector{
+                background-color: transparent !important;
+                border: none !important;
+                color: var(--light_select);
+                padding: 0 1rem;
+            }
+            .ant-select-arrow{
+                color: var(--light_select);
+            }
+        }
 
     .content{
         width: 100%;
@@ -66,14 +75,6 @@
             color: var(--white);
 
         }
-        button:nth-child(2){
-            background-color: var(--blue-450);
-            border: 1px solid var(--blue-150);
-        }
-        button:last-child{
-            background-color: transparent;
-            border: 1px solid var(--white);
-        }
 
         .left{
             height: 100%;
@@ -81,15 +82,6 @@
             align-items: center;
             justify-content: center;
 
-            :global{
-                .ant-select-selector{
-                    background-color: transparent;
-                    border: none;
-                }
-                .ant-select-arrow{
-                    color: var(--white);
-                }
-            }
         }
 
         .right{
@@ -157,6 +149,18 @@
     width: 100%;
     height: 70px;
     position: fixed;
+
+    :global{
+        .ant-select-selector{
+            background-color: transparent !important;
+            border: none !important;
+            color: var(--light_select);
+            padding: 0 1rem;
+        }
+        .ant-select-arrow{
+            color: var(--light_select);
+        }
+    }
 
     .content{
         width: 100%;
@@ -230,15 +234,6 @@
             align-items: center;
             justify-content: center;
 
-            :global{
-                .ant-select-selector{
-                    background-color: transparent;
-                    border: none;
-                }
-                .ant-select-arrow{
-                    color: var(--white);
-                }
-            }
         }
 
         .right{
@@ -283,11 +278,11 @@
                 .ant-select-selector{
                     background-color: transparent;
                     border: none;
-                    color: var(--white);
+                    color: var(--light_select);
                     padding: 0 1rem;
                 }
                 .ant-select-arrow{
-                    color: var(--white);
+                    color: var(--light_select);
                 }
             }
         }

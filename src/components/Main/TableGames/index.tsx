@@ -1,6 +1,8 @@
 import { Progress } from 'antd';
 import React, { useState } from 'react';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import { light } from '../../../../constants/theme';
+import { getContext } from '../../../context/context.global';
 import { FilteredNames } from '../../utils/Filter';
 import styles from './index.module.scss';
 
@@ -24,6 +26,10 @@ export const TableGames = ({item}: TableGamesProps) => {
     const [showMore, setShowMore] = useState<boolean>(false);
     const title = FilteredNames({title: item.title});
 
+    const {
+        darkMode,
+    } = getContext();
+
     const handleChangeShowMore = () => {
         setShowMore(prevState => !prevState);
     };
@@ -37,7 +43,11 @@ export const TableGames = ({item}: TableGamesProps) => {
             <button onClick={handleChangeShowMore}>
                 <div>
                     <img src={item.icon} />
-                    <p>{title[0]} <strong>{title[1]}</strong></p>
+                    <p style={{
+                        ...light.word
+                    }}>{title[0]} <strong style={{
+                        ...light.word,
+                    }}>{title[1]}</strong></p>
                 </div>
 
                 <a>Classificações ao vivo</a>
@@ -48,13 +58,13 @@ export const TableGames = ({item}: TableGamesProps) => {
                 <label>
                     {showMore ? (
                         <RiArrowUpSLine
-                            color="var(--white)"
+                            color="var(--light)"
                             size={25}
                             cursor='pointer'
                         />
                     ) : (
                         <RiArrowDownSLine
-                            color="var(--white)"
+                            color="var(--light)"
                             size={25}
                             cursor='pointer'
                         />
@@ -72,21 +82,24 @@ export const TableGames = ({item}: TableGamesProps) => {
                         <img className={styles.star} style={{
                             width: '20px',
                             height: '20px'
-                        }} src="/icons/star.svg" />
+                        }} src={darkMode ? "/icons/light/star.svg" : "/icons/dark/star.svg"} />
                         <div className={styles.live}>
                             <p>Live</p>
                         </div>
                         <div className={styles.gameNamesTeams}>
                             <p style={{
                                 marginRight: '0.3rem',
+                                color: 'var(--light-100)',
                             }}>{item.team[0]?.name}</p>
                             <img src={item.team[0]?.icon} alt="" />
                             <p style={{
-                                margin: '0 1rem'
+                                margin: '0 1rem',
+                                color: 'var(--light-100)',
                             }}>{`${item.team[0]?.goals} - ${item.team[1]?.goals}`}</p>
                             <img src={item.team[1]?.icon} alt="" />
                             <p  style={{
                                 marginLeft: '0.3rem',
+                                color: 'var(--light-100)',
                             }}>{item.team[1]?.name}</p>
                             <Progress
                                 type="circle"
@@ -97,7 +110,6 @@ export const TableGames = ({item}: TableGamesProps) => {
                                 }}
                                 style={{
                                     marginLeft: '1rem',
-                                    color: '#fff',
                                     zIndex: 0,
                                 }}
                                 width={40}

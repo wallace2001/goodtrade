@@ -6,6 +6,7 @@ import { getContext } from '../../context/context.global';
 import { DrawerMobile } from './DrawerMobile';
 
 import styles from './header.module.scss';
+import { light } from '../../../constants/theme';
 
 interface PropsHeader{
     haveBackground: boolean;
@@ -20,6 +21,8 @@ export const Header = ({haveBackground}: PropsHeader) => {
         changeTools
      } = getContext();
 
+    const isEcramBigger80 = ecram.scroll >= 80;
+
     const {
         changeLanguage,
         language,
@@ -30,24 +33,26 @@ export const Header = ({haveBackground}: PropsHeader) => {
     };
 
     const backgroundStyles = {
-        background: ecram.scroll >= 80 || haveBackground ?
-        "linear-gradient(90deg, rgba(1,68,116,1) 0%, rgba(0,214,243,0.78) 11%, rgba(1,68,116,1) 31%)"  :
-        haveBackground ?
-        "rgba(1,68,116, .5);" :
-        "transparent"
-        };
+        backgroundColor: isEcramBigger80 ?
+        'var(--background-header)' :
+        'transparent'
+    };
 
     return (
         <div
             style={{...backgroundStyles, position: 'sticky', top: 0, zIndex: 999}}
-            className={styles.container}>
+            className={styles.containera}>
             <div className={styles.content}>
                 <div className={styles.left}>
-                    <h4>ApostaMelhor</h4>
+                    <h4 style={
+                        isEcramBigger80 ?
+                        {...light.wordRevert} :
+                        {...light.word}
+                    }>ApostaMelhor</h4>
                     <Select
                         style={{
                             marginLeft: '1rem',
-                            color: '#fff',
+                            ...light.word
                         }}
                         dropdownStyle={{
                             backgroundColor: 'rgba(255,255,255,.5)',
@@ -79,6 +84,9 @@ export const Header = ({haveBackground}: PropsHeader) => {
                     <Select
                         defaultValue={tools}
                         onChange={changeTools}
+                        style={{
+                            ...light.word,
+                        }}
                         dropdownStyle={{
                             backgroundColor: 'rgba(255,255,255,.7)',
                         }}
@@ -92,8 +100,21 @@ export const Header = ({haveBackground}: PropsHeader) => {
                             </Select.Option>
                         ))}
                     </Select>
-                    <button disabled={true}>Entrar</button>
-                    <button>Login</button>
+                    <button
+                        style={
+                            isEcramBigger80 ?
+                            {...light.buttonLoginEcramBigger} :
+                            {...light.buttonLogin}
+                        }
+                        disabled={true}
+                    >Entrar</button>
+                    <button
+                        style={
+                            isEcramBigger80 ?
+                            {...light.buttonCreateEcramBigger} :
+                            {...light.buttonCreate}
+                        }
+                    >Login</button>
                 </div>
             </div>
             <div className={styles.contentMobile}>

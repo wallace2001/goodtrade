@@ -4,8 +4,6 @@
     min-width: 308px;
     padding: 1rem 0.6rem;
     margin: 1rem 0;
-    background: linear-gradient(149.43deg, rgba(0, 43, 73, 0.64) 20.12%, rgba(0, 149, 255, 0.08) 98.85%);
-    border: 1px solid rgba(255, 255, 255, .15);
 
     border-radius: 10px;
 
@@ -81,9 +79,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: var(--white);
 
-                background-color: var(--white);
+                background-color: var(--background-viewer-index-tipster);
                 color: black;
                 font-weight: 500;
                 font-size: 14px;
@@ -102,7 +99,7 @@
             }
 
             &:not([disabled]):hover{
-                background: rgba(0, 50, 86, 0.4);
+                background: var(--background-hover);
             }
         }
 

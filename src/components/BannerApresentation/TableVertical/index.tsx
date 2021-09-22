@@ -1,8 +1,14 @@
 import React from 'react';
 import { BiTimeFive } from 'react-icons/bi';
+import { light } from '../../../../constants/theme';
+import { getContext } from '../../../context/context.global';
 import styles from './index.module.scss';
 
 export const TableVertical = () => {
+
+    const {
+        darkMode,
+    } = getContext();
 
     const results = [
         {
@@ -44,7 +50,9 @@ export const TableVertical = () => {
 
     return (
         <div className={styles.container}>
-            <h4>Apostas Punter - DEMO</h4>
+            <h4 style={{
+                ...light.word,
+            }}>Apostas Punter - DEMO</h4>
 
             <div style={{
                 width: '100%',
@@ -59,9 +67,9 @@ export const TableVertical = () => {
                         <main>
                             <label>
                                 <div>
-                                    <BiTimeFive color="#FDB90E" size={20} />
+                                    <BiTimeFive color={`${darkMode ? '#ED2939' : '#FDB90E'}`} size={20} />
                                     <p style={{
-                                        color: '#FDB90E',
+                                        color: `${darkMode ? '#ED2939' : '#FDB90E'}`,
                                         fontWeight: 500,
                                         marginLeft: '0.5rem'
                                     }}>2º T - 77’</p>
@@ -70,14 +78,18 @@ export const TableVertical = () => {
                             <label>
                                 <div>
                                     <img src="/team/chelsea.png" alt="Chelsea" />
-                                    <p>Chelsea</p>
+                                    <p style={{
+                                        ...light.word
+                                    }}>Chelsea</p>
                                 </div>
                                 <p className={styles.status}>2</p>
                             </label>
                             <label>
                                 <div>
                                     <img src="/team/mancheste.png" alt="Chelsea" />
-                                    <p>Mancheste United</p>
+                                    <p style={{
+                                        ...light.word,
+                                    }}>Mancheste United</p>
                                 </div>
                                 <p className={styles.status}>1</p>
                             </label>
@@ -88,12 +100,24 @@ export const TableVertical = () => {
                     {/* <img src="/icons/hand_2.png" /> */}
                     {results.map((item, idx) => (
                         <div key={idx} style={
-                            item.checked ? {backgroundColor: 'rgba(34, 210, 126, 0.2)'} : {backgroundColor: 'rgba(16, 16, 16, 0.2)'}
+                            darkMode ?
+                            item.checked ? 
+                            {backgroundColor: 'rgba(34, 210, 126, 0.9)'} : 
+                            {backgroundColor: 'rgba(16, 16, 16, 0.2)'} :
+                            item.checked ?
+                            {backgroundColor: 'rgba(34, 210, 126, 0.2)'} : 
+                            {backgroundColor: 'rgba(16, 16, 16, 0.2)'}
                         }>
                             <header>{item.name}</header>
                             <main>
                                 <p style={
-                                item.checked ? {color: 'rgba(34, 210, 126)'} : {color: '#fff'}
+                                darkMode ?
+                                item.checked ?
+                                {color: '#fff'} :
+                                {color: 'var(--white)'} :
+                                item.checked ?
+                                {color: 'rgba(34, 210, 126)'} :
+                                {color: 'var(--white)'}
                                 }
                             >{item.value}</p>
                             </main>
