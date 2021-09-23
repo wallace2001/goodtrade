@@ -1,5 +1,5 @@
 .container{
-    width: 60rem;
+    width: 100%;
     height: auto;
     border-radius: 20px;
     margin-top: 50px;
@@ -7,10 +7,6 @@
     padding: 1rem 2rem;
 
     transition: width 0.2s, padding 0.2s;
-
-    @media (max-width: 1200px){
-        width: 95%;
-    }
 
     header{
         display: flex;

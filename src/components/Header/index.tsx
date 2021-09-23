@@ -126,7 +126,7 @@ export const Header = ({haveBackground}: PropsHeader) => {
                 <div>
                     <BiSearch size={23} />
                     <img src='/icons/dark/gear.svg' />
-                    <img onClick={changeDarkmode} src={darkMode ? '/icons/dark/light.svg' : '/icons/light/dark.svg'} />
+                    <img onClick={changeDarkmode} src={darkMode ? '/icons/light/dark.svg' : '/icons/dark/light.svg'} />
                     <div>
                         <HiMenu
                             size={30}

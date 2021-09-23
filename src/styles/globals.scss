@@ -96,22 +96,27 @@
   --light_select-arrow: var(--white);
 }
 
+@media (max-width: 1300px){
+  html {
+    font-size: 90%;
+  }
+}
+
 @media (max-width: 1080px){
   html {
-    font-size: 93.75%;
+    font-size: 89.75%;
   }
 }
 
 @media (max-width: 720px){
   html {
-    font-size: 80.5%;
+    font-size: 82.5%;
   }
 }
 
 body {
   background: var(--background-darkmode);
   color: var(--white);
-  height: 100%;
 }
 
 body, input, textarea, select, button {

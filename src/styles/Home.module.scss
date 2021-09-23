@@ -43,7 +43,7 @@
   .content{
     width: 100%;
     height: 100%;
-    padding: 50px 120px;
+    padding: 50px 50px;
 
     display: flex;
     justify-content: space-between;
@@ -78,7 +78,7 @@
       transition: transform 0.2s;
 
       @media (max-width: 800px){
-        width: 96%;
+        width: 100%;
       }
 
       &:hover{
@@ -117,18 +117,16 @@
           }
       }
 
-      img{
-          @media (min-width: 1200px){
-              display: none;
-          }
-      }
-
       img:nth-child(3){
           margin-top: 0.3rem;
       }
       img:last-child{
           margin-top: 0.2rem;
       }
+
+      @media (min-width: 1200px){
+        display: none;
+    }
   }
   }
 }
