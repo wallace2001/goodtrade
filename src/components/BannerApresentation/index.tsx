@@ -30,7 +30,9 @@ export const BannerApresentation = () => {
                     <div>
                         <img src="/images/user.png" alt="Wallace" />
                     </div>
-                    <p>Username</p>
+                    <p style={{
+                        ...light.word
+                    }}>Username</p>
                 </div>
             </header>
             <main className={styles.content}>

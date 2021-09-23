@@ -12,20 +12,22 @@ export const ApresentationHome = () => {
 
     return (
         <div className={styles.container}>
-            <p style={{
-                ...light.word,
-            }} className={styles.title}>
-                Amplie seus <br /> <strong style={{
-                    ...light.word
-                }}>Resultados</strong> <br /> com nossos bots!
-            </p>
-
-            <p
-                className={styles.description}
-                style={{
+            <div>
+                <p style={{
                     ...light.word,
-                }}
-            >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                }} className={styles.title}>
+                    Amplie seus <br /> <strong style={{
+                        ...light.word
+                    }}>Resultados</strong> <br /> com nossos bots!
+                </p>
+
+                <p
+                    className={styles.description}
+                    style={{
+                        ...light.word,
+                    }}
+                >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>    
+            </div>
 
             <div className={styles.boxBot}>
                 <img src='/icons/button_home.png' />

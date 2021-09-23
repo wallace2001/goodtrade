@@ -1,7 +1,19 @@
 export const light = {
+    backgroundImageMobileDark: {
+        backgroundImage: 'url(/images/background_mobile.png)',
+    },
+    backgroundImageMobileLight: {
+        backgroundImage: 'url(/images/background_mobile_light.png)',
+    },
+    backgroundImageDark: {
+        backgroundImage: 'url(/images/background_dark.png)',
+    },
+    backgroundImageLight: {
+        backgroundImage: 'url(/images/background_light.png)',
+    },
     backgroundBoxHomeLight: {
         background: 'linear-gradient(130.33deg, rgba(255, 255, 255, 1) -2.68%, rgba(255, 255, 255, 0.1) 101.41%)',
-        border: '1px solid rgba(255, 255, 255, 0.5)',
+        border: '1px solid rg(255, 255, 255, 0.5)',
     },
     backgroundBoxHomeDark: {
         background: 'linear-gradient(180deg, rgba(196, 196, 196, 0.5) 0%, rgba(196, 196, 196, 0.1) 100%)',

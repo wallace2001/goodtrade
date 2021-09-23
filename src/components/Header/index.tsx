@@ -7,6 +7,7 @@ import { DrawerMobile } from './DrawerMobile';
 
 import styles from './header.module.scss';
 import { light } from '../../../constants/theme';
+import { BiSearch } from 'react-icons/bi';
 
 interface PropsHeader{
     haveBackground: boolean;
@@ -18,7 +19,9 @@ export const Header = ({haveBackground}: PropsHeader) => {
     const {
         tools,
         ecram,
-        changeTools
+        darkMode,
+        changeTools,
+        changeDarkmode,
      } = getContext();
 
     const isEcramBigger80 = ecram.scroll >= 80;
@@ -118,14 +121,23 @@ export const Header = ({haveBackground}: PropsHeader) => {
                 </div>
             </div>
             <div className={styles.contentMobile}>
-                <HiMenu
-                    size={30}
-                    style={{
-                        cursor: 'pointer',
-                    }}
-                    onClick={handleChangeDrawerMobileVisible}
-                />
                 <h4>ApostaMelhor</h4>
+                
+                <div>
+                    <BiSearch size={23} />
+                    <img src='/icons/dark/gear.svg' />
+                    <img onClick={changeDarkmode} src={darkMode ? '/icons/dark/light.svg' : '/icons/light/dark.svg'} />
+                    <div>
+                        <HiMenu
+                            size={30}
+                            style={{
+                                cursor: 'pointer',
+                            }}
+                            onClick={handleChangeDrawerMobileVisible}
+                        />
+                    </div>
+                </div>
+
             </div>
             <DrawerMobile
                 isVisible={isDrawerMobileVisible}

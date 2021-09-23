@@ -443,3 +443,12 @@ export const HEADERS = [
         iconLight: "/icons/light/handbol.svg",
     },
 ];
+
+export const SECONDARY_HEADER_MOBILE = [
+    {
+        id: '1',
+        name: 'Futebol',
+        iconDark: "/icons/dark/futbol.svg",
+        iconLight: "/icons/light/futbol.svg",
+    },
+];

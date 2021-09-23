@@ -48,7 +48,7 @@ export const TableHorizontal = () => {
             </div>
 
             <div className={styles.content}>
-                <img src="/icons/hand.png" />
+                {/* <img src="/icons/hand.png" /> */}
                 {results.map((item, idx) => (
                     <div key={idx} className={styles.box}>
                         <div>

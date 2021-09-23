@@ -58,7 +58,7 @@ export const TableVertical = () => {
                 width: '100%',
                 height: '100%',
                 display: 'flex',
-            }}>
+            }} className={styles.wrapper}>
                 <div className={styles.content}>
                     <div className={styles.box}>
                         <header>
