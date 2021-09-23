@@ -30,7 +30,7 @@ export const ApresentationHome = () => {
             </div>
 
             <div className={styles.boxBot}>
-                <img src='/icons/button_home.png' />
+                <img loading="lazy" src='/icons/button_home.png' />
                 <p>QUERO TESTAR</p>
             </div>
 
@@ -38,7 +38,7 @@ export const ApresentationHome = () => {
                 {LINKS.map((item, index) => {
                     return(
                         <a href={`#${item.name}`} key={index}>
-                            <img key={index} src={!darkMode ? item.iconDark : item.iconLight} />
+                            <img loading="lazy" key={index} src={!darkMode ? item.iconDark : item.iconLight} />
                         </a>
                     );
                 })}

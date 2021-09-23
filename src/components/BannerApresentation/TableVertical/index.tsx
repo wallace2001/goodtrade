@@ -77,7 +77,7 @@ export const TableVertical = () => {
                             </label>
                             <label>
                                 <div>
-                                    <img src="/team/chelsea.png" alt="Chelsea" />
+                                    <img loading="lazy" src="/team/chelsea.png" alt="Chelsea" />
                                     <p style={{
                                         ...light.word
                                     }}>Chelsea</p>
@@ -86,7 +86,7 @@ export const TableVertical = () => {
                             </label>
                             <label>
                                 <div>
-                                    <img src="/team/mancheste.png" alt="Chelsea" />
+                                    <img loading="lazy" src="/team/mancheste.png" alt="Chelsea" />
                                     <p style={{
                                         ...light.word,
                                     }}>Mancheste United</p>

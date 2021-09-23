@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import classNames from 'classnames';
 import { ApresentationHome } from '../components/ApresentationHome'
 import { BannerApresentation } from '../components/BannerApresentation'
 import { Header } from '../components/Header'
@@ -7,7 +6,6 @@ import { HeaderSecondary } from '../components/Header/HeaderSecondary'
 import { Main } from '../components/Main'
 import { getContext } from '../context/context.global'
 import styles from '../styles/Home.module.scss'
-import { light } from '../../constants/theme';
 import { LINKS } from '../../constants/constants';
 
 export default function Home() {
@@ -28,7 +26,7 @@ export default function Home() {
           <BannerApresentation />
 
           <div className={styles.boxBot}>
-                <img src='/icons/button_home.png' />
+                <img loading="lazy" src='/icons/button_home.png' />
                 <p>QUERO TESTAR</p>
             </div>
 
@@ -36,7 +34,7 @@ export default function Home() {
                 {LINKS.map((item, index) => {
                     return(
                         <a href={`#${item.name}`} key={index}>
-                            <img key={index} src={!darkMode ? item.iconDark : item.iconLight} />
+                            <img loading="lazy" key={index} src={!darkMode ? item.iconDark : item.iconLight} />
                         </a>
                     );
                 })}

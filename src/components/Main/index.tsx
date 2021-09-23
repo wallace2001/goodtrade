@@ -56,7 +56,7 @@ export const Main = () => {
                             more={false}
                         />
                         <button className={styles.calculator}>
-                            <img src="/icons/calculator.svg" alt="Calculator" />
+                            <img loading="lazy" src="/icons/calculator.svg" alt="Calculator" />
                             <p>Calculadoras de Apostas</p>
                         </button>
                         <Box
@@ -86,7 +86,7 @@ export const Main = () => {
                                             {item.name === 'Todos' && <div />}
                                         </button>
                                     ))}
-                                    {darkMode ? <img src="/icons/light/settings_light.svg" /> : <img src="/icons/dark/settings_dark.svg" />}
+                                    {darkMode ? <img loading="lazy" src="/icons/light/settings_light.svg" /> : <img loading="lazy" src="/icons/dark/settings_dark.svg" />}
                                 </div>
                                 <div style={
                                     darkMode ?
@@ -124,6 +124,7 @@ export const Main = () => {
                             <div className={styles.games}>
                                 <header>
                                     <img
+                                        loading="lazy"
                                         src={darkMode ? "/images/light/background_title.svg" : "/images/dark/background_title.svg"}
                                         alt="header"
                                     />

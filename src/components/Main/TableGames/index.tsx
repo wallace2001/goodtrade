@@ -42,7 +42,7 @@ export const TableGames = ({item}: TableGamesProps) => {
         <div className={styles.container}>
             <button onClick={handleChangeShowMore}>
                 <div>
-                    <img src={item.icon} />
+                    <img loading="lazy" src={item.icon} />
                     <p style={{
                         ...light.word
                     }}>{title && title[0]} <strong style={{
@@ -79,7 +79,7 @@ export const TableGames = ({item}: TableGamesProps) => {
             }>
                 {item.game.map((item, idx) => (
                     <div key={idx} className={styles.game}>
-                        <img className={styles.star} style={{
+                        <img loading="lazy" className={styles.star} style={{
                             width: '20px',
                             height: '20px'
                         }} src={darkMode ? "/icons/light/star.svg" : "/icons/dark/star.svg"} />
@@ -92,7 +92,7 @@ export const TableGames = ({item}: TableGamesProps) => {
                                     marginRight: '0.3rem',
                                     color: 'var(--light-100)',
                                 }}>{item.team[0]?.name}</p>
-                                <img src={item.team[0]?.icon} alt="" />
+                                <img loading="lazy" src={item.team[0]?.icon} alt="" />
                             </div>
                             <div className={styles.status}>
                                 <p>{item.team[0]?.goals}</p>
@@ -103,7 +103,7 @@ export const TableGames = ({item}: TableGamesProps) => {
                                 <p>{item.team[1]?.goals}</p>
                             </div>
                             <div>
-                                <img src={item.team[1]?.icon} alt="" />
+                                <img loading="lazy" src={item.team[1]?.icon} alt="" />
                                 <p  style={{
                                     marginLeft: '0.3rem',
                                     color: 'var(--light-100)',
@@ -127,13 +127,13 @@ export const TableGames = ({item}: TableGamesProps) => {
                         </div>
                             <div className={styles.buttonsGame}>
                                 <label>
-                                    <img src="/icons/monitor.svg" alt="" />
+                                    <img loading="lazy" src="/icons/monitor.svg" alt="" />
                                 </label>
                                 <label>
-                                    <img src="/icons/fone.svg" alt="" />
+                                    <img loading="lazy" src="/icons/fone.svg" alt="" />
                                 </label>
                                 <label>
-                                    <img src="/icons/camisa.svg" alt="" />
+                                    <img loading="lazy" src="/icons/camisa.svg" alt="" />
                                 </label>
                             </div>
                     </div>

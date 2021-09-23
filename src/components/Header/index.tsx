@@ -72,7 +72,8 @@ export const Header = ({haveBackground}: PropsHeader) => {
                                     value={item.value} 
                                     key={index}
                                 >
-                                    <img 
+                                    <img
+                                        loading="lazy"
                                         style={{
                                             marginRight: '0.5rem'
                                         }}
@@ -125,8 +126,8 @@ export const Header = ({haveBackground}: PropsHeader) => {
                 
                 <div>
                     <BiSearch size={23} />
-                    <img src='/icons/dark/gear.svg' />
-                    <img onClick={changeDarkmode} src={darkMode ? '/icons/light/dark.svg' : '/icons/dark/light.svg'} />
+                    <img loading="lazy" src='/icons/dark/gear.svg' />
+                    <img loading="lazy" onClick={changeDarkmode} src={darkMode ? '/icons/light/dark.svg' : '/icons/dark/light.svg'} />
                     <div>
                         <HiMenu
                             size={30}

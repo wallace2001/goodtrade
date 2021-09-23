@@ -33,7 +33,7 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
             {...light.backgroundBoxGameDetailsDark}
         } className={styles.container}>
             <header>
-                <img src={icon} alt={title} />
+                <img loading="lazy" src={icon} alt={title} />
                 <h2 style={{
                     ...light.word,
                 }}>{titleFiltered[0]} <strong>{titleFiltered[1]}</strong></h2>

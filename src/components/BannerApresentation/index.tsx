@@ -28,7 +28,7 @@ export const BannerApresentation = () => {
                 </div>
                 <div className={styles.wrapper_02}>
                     <div>
-                        <img src="/images/user.png" alt="Wallace" />
+                        <img loading="lazy" src="/images/user.png" alt="Wallace" />
                     </div>
                     <p style={{
                         ...light.word
