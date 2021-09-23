@@ -5,19 +5,13 @@ import { changeCategory } from '../store/action/categorie';
 interface ContextProps{
     tools: string;
     language: string;
-    ecram: PropsEcram;
+    scroll: number;
     categorie: string;
     darkMode: boolean;
     changeLanguage: (value: string) => void;
     changeTools: (value: string) => void;
     changeCategories: (value: string) => void;
     changeDarkmode: () => void;
-}
-
-interface PropsEcram{
-    width: number;
-    height: number;
-    scroll: number,
 }
 
 interface ProviderProps{
@@ -28,11 +22,7 @@ export const GlobalContext = createContext({} as ContextProps);
 
 export const GlobalProvider = ({children}: ProviderProps) => {
     const [tools, setTools] = useState<string>('Ferramentas');
-    const [ecram, setTamEcram] = useState<PropsEcram>({
-        width: 0,
-        height: 0,
-        scroll: 0,
-    });
+    const [scroll, setTamScroll] = useState<number>(0);
     const [language, setLanguage] = useState<string>('br');
     const [darkMode, setDarkMode] = useState<boolean>(false);
     const [isBigger80, setIsBigger80] = useState<boolean>(false);
@@ -43,13 +33,13 @@ export const GlobalProvider = ({children}: ProviderProps) => {
     const getTamScroll = () => {
         const $html = document.querySelector('html');
         if (isBigger80){
-            if (ecram.scroll < 80){
+            if (scroll < 80){
                 $html?.classList.remove('ecram');
                 setIsBigger80(false);
             }
             return;
         } else {
-            if (ecram.scroll > 80){
+            if (scroll > 80){
                 $html?.classList.add('ecram');
                 setIsBigger80(true);
             }
@@ -75,31 +65,18 @@ export const GlobalProvider = ({children}: ProviderProps) => {
     };
     
     useEffect(() => {
-        window.onscroll = () => setTamEcram({
-            ...ecram,
-            scroll: document.documentElement.scrollTop,
-        });
+        window.onscroll = () => setTamScroll(document.documentElement.scrollTop);
     }, []);
 
     useEffect(() => {
         getTamScroll();
-    }, [ecram.scroll])
-
-    useEffect(() => {
-        document.body.onresize = () => {
-          setTamEcram({
-              ...ecram,
-              width: document.body.clientWidth,
-              height: document.body.clientHeight,
-          });
-        }
-      }, []);
+    }, [scroll])
 
     return(
         <GlobalContext.Provider value={{
             tools,
             language,
-            ecram,
+            scroll,
             categorie,
             darkMode,
             changeLanguage,

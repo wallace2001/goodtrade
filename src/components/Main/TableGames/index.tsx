@@ -22,7 +22,7 @@ interface TableGamesProps{
     } | null;
 }
 
-export const TableGames = ({item}: TableGamesProps) => {
+const TableGames = ({item}: TableGamesProps) => {
     const [showMore, setShowMore] = useState<boolean>(false);
     const title = FilteredNames({title: item?.title});
 
@@ -142,3 +142,5 @@ export const TableGames = ({item}: TableGamesProps) => {
         </div>
     )
 }
+
+export default React.memo(TableGames);

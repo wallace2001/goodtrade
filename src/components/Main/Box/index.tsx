@@ -42,9 +42,7 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                 {button && item === undefined ? (
                     <button className={styles.buttonAddTeam}>
                         {`${button.title.split(' ')[0]} ${button.title.split(' ')[1]} `}
-                        <strong style={{
-                            ...light.word,
-                        }}>{`${button.title.split(' ')[2]} ${button.title.split(' ')[3]}`}</strong>
+                        <strong>{`${button.title.split(' ')[2]} ${button.title.split(' ')[3]}`}</strong>
                     </button>
                 ) : !button && item !== undefined && (
                     item?.map((item, idx) => {

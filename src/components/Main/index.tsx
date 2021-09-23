@@ -9,7 +9,7 @@ import { getContext } from '../../context/context.global';
 import { Box } from './Box';
 import { GameScrollList } from './GameScrollList';
 import styles from './index.module.scss';
-import { TableGames } from './TableGames';
+import TableGames from './TableGames';
 
 export const Main = () => {
 

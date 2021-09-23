@@ -18,13 +18,13 @@ export const Header = ({haveBackground}: PropsHeader) => {
 
     const {
         tools,
-        ecram,
+        scroll,
         darkMode,
         changeTools,
         changeDarkmode,
      } = getContext();
 
-    const isEcramBigger80 = ecram.scroll >= 80;
+    const isEcramBigger80 = scroll >= 80;
 
     const {
         changeLanguage,
