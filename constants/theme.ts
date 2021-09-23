@@ -10,6 +10,7 @@ export const light = {
     },
     backgroundImageLight: {
         backgroundImage: 'url(/images/background_light.png)',
+        zIndex: 5,
     },
     backgroundBoxHomeLight: {
         background: 'linear-gradient(130.33deg, rgba(255, 255, 255, 1) -2.68%, rgba(255, 255, 255, 0.1) 101.41%)',
