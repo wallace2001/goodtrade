@@ -4,6 +4,7 @@ import { FilteredNames } from '../../utils/Filter';
 import styles from './index.module.scss';
 import { light } from '../../../../constants/theme';
 import { getContext } from '../../../context/context.global';
+import {GameSlider} from '../GameSlider';
 
 interface PropsGameScroll{
     title: string;
@@ -37,47 +38,7 @@ export const GameScrollList = ({ title: titleNo, item }: PropsGameScroll) => {
                 <a href="#">Ver mais</a>
             </header>
             <div className={styles.list}>
-                {item.map((item, idx) => (
-                    <div style={
-                        darkMode ?
-                        {...light.backgroundBoxGameScrollViewLight} :
-                        {...light.backgroundBoxGameScrollViewDark}
-                    } key={idx} className={styles.box}>
-                        <div className={styles.inLive}>
-                            {item.live && <p>Live</p>}
-                        </div>
-                        <div className={styles.teams}>
-                            <div><img src={item.team[0].icon} alt={item.team[0].name} /></div>
-                            <p style={{
-                                color: 'var(--light-100)'}}>VS</p>
-                            <div><img src={item.team[1].icon} alt={item.team[1].name} /></div>
-                        </div>
-                        <div className={styles.info}>
-                            <strong style={{
-                                color: 'var(--light-100)'
-                            }}>{item.time}</strong>
-                            <Progress
-                                percent={50}
-                                showInfo={false}
-                                strokeColor="var(--red-800)"
-                            />
-                            <p style={{
-                                color: 'var(--light-100)'
-                            }}>{item.league}</p>
-
-                            {item.team.map((team, idx) => (
-                                <label key={idx}>
-                                    <strong style={{
-                                        color: 'var(--light-100)'
-                                    }}>{team.name}</strong>
-                                    <strong style={{
-                                        color: 'var(--light-100)'
-                                    }}>{team.goals}</strong>
-                                </label>
-                            ))}
-                        </div>
-                    </div>
-                ))}
+                <GameSlider item={item} />
             </div>
         </div>
     )

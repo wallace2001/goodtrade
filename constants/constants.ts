@@ -1,32 +1,40 @@
 
 export const TOOLS = [
     {
-        name: "Prognósticos",
-        value: "prognosticos",
+        name: "Bot Betfair",
+        value: "bot_betfair",
     },
     {
-        name: "Resultados",
-        value: "resultados",
+        name: "Trade Exchange DEMO",
+        value: "trade_exchange_demo",
     },
     {
-        name: "Históricos",
-        value: "historicos",
+        name: "Punter DEMO",
+        value: "punter_demo",
     },
     {
-        name: "Aposta trade",
-        value: "apostatrader",
+        name: "Simulador de estratégias",
+        value: "simulador_de_estrategias",
     },
     {
-        name: "Aposta Punter",
-        value: "apostapunter",
+        name: "Odd Justa",
+        value: "odd_justa",
     },
     {
-        name: "Gestão de Banca",
-        value: "gestaobanca",
+        name: "Gráfico de Pressão",
+        value: "grafico_de_pressao",
     },
     {
-        name: "Calculadora",
-        value: "calculadora",
+        name: "Gráfico de Pizza",
+        value: "grafico_de_pizza",
+    },
+    {
+        name: "Calculadora multiplas",
+        value: "calculadora_multiplas",
+    },
+    {
+        name: "Calculadoras",
+        value: "calculadoras",
     },
 ];
 
@@ -156,6 +164,24 @@ export const HEADER_GAME = [
 ];
 
 export const GAME = [
+    {
+        team: [
+            {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
+            {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+        ],
+        league: 'Football / England Premier League',
+        time: '2nd Half 6.7"',
+        live: true,
+    },
+    {
+        team: [
+            {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
+            {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+        ],
+        league: 'Football / England Premier League',
+        time: '2nd Half 6.7"',
+        live: true,
+    },
     {
         team: [
             {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
@@ -447,8 +473,32 @@ export const HEADERS = [
 export const SECONDARY_HEADER_MOBILE = [
     {
         id: '1',
+        name: 'Favoritos',
+        iconDark: "/icons/light/star.svg",
+        iconLight: "/icons/light/star_blue.svg",
+    },
+    {
+        id: '2',
         name: 'Futebol',
         iconDark: "/icons/dark/futbol.svg",
         iconLight: "/icons/light/futbol.svg",
+    },
+    {
+        id: '3',
+        name: 'Tênis',
+        iconDark: "/icons/dark/tenis.svg",
+        iconLight: "/icons/light/tenis.svg",
+    },
+    {
+        id: '4',
+        name: 'Basquete',
+        iconDark: "/icons/dark/basket.svg",
+        iconLight: "/icons/light/futbol.svg",
+    },
+    {
+        id: '5',
+        name: 'Mais',
+        iconDark: "/icons/dark/plus.svg",
+        iconLight: "/icons/light/plus.svg",
     },
 ];

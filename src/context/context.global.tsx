@@ -27,7 +27,7 @@ interface ProviderProps{
 export const GlobalContext = createContext({} as ContextProps);
 
 export const GlobalProvider = ({children}: ProviderProps) => {
-    const [tools, setTools] = useState<string>('ferramentas');
+    const [tools, setTools] = useState<string>('Ferramentas');
     const [ecram, setTamEcram] = useState<PropsEcram>({
         width: 0,
         height: 0,

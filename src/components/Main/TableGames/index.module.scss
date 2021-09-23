@@ -78,6 +78,11 @@
                 }
             }
 
+            @media (max-width: 600px){
+                font-size: 70%;
+                padding: 1rem 0.5rem;
+            }
+
             .star{
                 transition: color 0.2s;
                 &:hover{
@@ -100,6 +105,10 @@
                 p{
                     margin-top: 0.7rem;
                 }
+
+                @media (max-width: 600px){
+                    margin: 0 0.5rem;
+                }
             }
 
             .gameNamesTeams{
@@ -110,15 +119,56 @@
 
                 margin: 0 1rem;
 
-                img{
-                    width: 36px;
-                    height: 36px;
+                @media (max-width: 600px){
+                    margin: 0 0.5rem;
                 }
 
-                p{
-                    margin-top: 0.7rem;
-                    font-weight: bold;
+                div{
+                    width: 100%;
+                    height: 100%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media (max-width: 654px){
+                        flex-direction: column-reverse;
+                    }
+
+                    img{
+                        width: 36px;
+                        height: 36px;
+
+                        @media (max-width: 600px){
+                            width: 30px;
+                            height: 30px
+                        }
+                    }
+    
+                    p{
+                        margin-top: 0.7rem;
+                        font-weight: bold;
+                    }
+
                 }
+
+                div:nth-child(3){
+                    @media (max-width: 654px){
+                        flex-direction: column;
+                    }
+                }
+
+                .status{
+                    p{
+                        font-size: 16px;
+                        color: var(--light);
+                    }
+
+                    @media (max-width: 654px){
+                        flex-direction: row;
+                    }
+                }
+
             }
 
             .buttonsGame{
@@ -128,6 +178,10 @@
 
                 display: flex;
                 justify-content: flex-end;
+
+                @media (max-width: 862px){
+                    display: none;
+                }
 
                 label{
                     width: 34px;

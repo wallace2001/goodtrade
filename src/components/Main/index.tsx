@@ -72,45 +72,45 @@ export const Main = () => {
                     </div>
                     <div className={styles.right}>
                         <header>
-                            <div style={
-                                darkMode ?
-                                {...light.backgroundBoxGameDetailsLight} : 
-                                {...light.backgroundBoxGameDetailsDark}
-                            } className={styles.headerGame}>
-                                {HEADER_GAME.map((item, idx) => (
-                                    <button key={idx}>
-                                        <p style={{
-                                            ...light.word
-                                        }} key={item.name}>{item.name}</p>
-                                        {item.name === 'Todos' && <div />}
-                                    </button>
-                                ))}
-                                <label>
-                                    <BsPlus size={25} color="var(--light)"/>
-                                </label>
+                            <div className={styles.header}>
+                                <div style={
+                                    darkMode ?
+                                    {...light.backgroundBoxGameDetailsLight} : 
+                                    {...light.backgroundBoxGameDetailsDark}
+                                } className={styles.headerGame}>
+                                    {HEADER_GAME.map((item, idx) => (
+                                        <button key={idx}>
+                                            <p style={{
+                                                ...light.word
+                                            }} key={item.name}>{item.name}</p>
+                                            {item.name === 'Todos' && <div />}
+                                        </button>
+                                    ))}
+                                    {darkMode ? <img src="/icons/light/settings_light.svg" /> : <img src="/icons/dark/settings_dark.svg" />}
+                                </div>
+                                <div style={
+                                    darkMode ?
+                                    {...light.backgroundBoxGameDetailsLight} : 
+                                    {...light.backgroundBoxGameDetailsDark}
+                                } className={styles.date}>
+                                    <label>
+                                        <MdKeyboardArrowLeft
+                                            color={'var(--light)'}
+                                            size={25}
+                                        />
+                                    </label>
+                                    <p style={{
+                                        ...light.word,
+                                    }}>28/08 Qua</p>
+                                    <label>
+                                        <MdKeyboardArrowRight
+                                            color={'var(--light)'}
+                                            size={25}
+                                        />
+                                    </label>
+                                </div>
+                                <div></div>
                             </div>
-                            <div style={
-                                darkMode ?
-                                {...light.backgroundBoxGameDetailsLight} : 
-                                {...light.backgroundBoxGameDetailsDark}
-                            } className={styles.date}>
-                                <label>
-                                    <MdKeyboardArrowLeft
-                                        color={'var(--light)'}
-                                        size={25}
-                                    />
-                                </label>
-                                <p style={{
-                                    ...light.word,
-                                }}>28/08 Qua</p>
-                                <label>
-                                    <MdKeyboardArrowRight
-                                        color={'var(--light)'}
-                                        size={25}
-                                    />
-                                </label>
-                            </div>
-                            <div></div>
                         </header>
                         <main style={
                                 darkMode ? 
@@ -191,6 +191,35 @@ export const Main = () => {
                             </label>
                         </div>
                     </div>
+                </div>
+                <div className={styles.footerMobile}>
+                    <div>
+                        <div>
+                            <p>Contate-nos</p>
+                            <p>Franquia</p>
+                            <p>FAQ</p>
+                        </div>
+                        <div>
+                        <p>Política de Privacidade</p>
+                            <p>Termos e Condições</p>
+                            <p>Anunciar</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label>
+                            <FaFacebookF color='var(--background-footer-2)'/>
+                        </label>
+                        <label>
+                            <ImInstagram color='var(--background-footer-2)'/>
+                        </label>
+                        <label>
+                            <FaTwitter color='var(--background-footer-2)'/>
+                        </label>
+                        <label>
+                            <FaYoutube color='var(--background-footer-2)'/>
+                        </label>
+                    </div>
+                    <p>Copyright © 2021-21 ApostaMelhor</p>
                 </div>
         </div>
     )

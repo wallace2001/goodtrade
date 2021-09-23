@@ -87,20 +87,28 @@ export const TableGames = ({item}: TableGamesProps) => {
                             <p>Live</p>
                         </div>
                         <div className={styles.gameNamesTeams}>
-                            <p style={{
-                                marginRight: '0.3rem',
-                                color: 'var(--light-100)',
-                            }}>{item.team[0]?.name}</p>
-                            <img src={item.team[0]?.icon} alt="" />
-                            <p style={{
-                                margin: '0 1rem',
-                                color: 'var(--light-100)',
-                            }}>{`${item.team[0]?.goals} - ${item.team[1]?.goals}`}</p>
-                            <img src={item.team[1]?.icon} alt="" />
-                            <p  style={{
-                                marginLeft: '0.3rem',
-                                color: 'var(--light-100)',
-                            }}>{item.team[1]?.name}</p>
+                            <div>
+                                <p style={{
+                                    marginRight: '0.3rem',
+                                    color: 'var(--light-100)',
+                                }}>{item.team[0]?.name}</p>
+                                <img src={item.team[0]?.icon} alt="" />
+                            </div>
+                            <div className={styles.status}>
+                                <p>{item.team[0]?.goals}</p>
+                                <p style={{
+                                    margin: '0 0.5rem',
+                                    marginBottom: '0.5rem'
+                                }}> - </p>
+                                <p>{item.team[1]?.goals}</p>
+                            </div>
+                            <div>
+                                <img src={item.team[1]?.icon} alt="" />
+                                <p  style={{
+                                    marginLeft: '0.3rem',
+                                    color: 'var(--light-100)',
+                                }}>{item.team[1]?.name}</p>
+                            </div>
                             <Progress
                                 type="circle"
                                 strokeColor={ item.time <= 50 ? {

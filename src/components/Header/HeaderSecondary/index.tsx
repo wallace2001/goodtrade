@@ -2,7 +2,7 @@ import React from 'react';
 import { Select } from 'antd';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
-import { HEADERS } from '../../../../constants/constants';
+import { HEADERS, SECONDARY_HEADER_MOBILE } from '../../../../constants/constants';
 import styles from './index.module.scss';
 import { getContext } from '../../../context/context.global';
 import { light } from '../../../../constants/theme';
@@ -66,10 +66,24 @@ export const HeaderSecondary = () => {
                         src={darkMode ? "/icons/light/dark.svg" : "/icons/dark/light.svg"}
                         onClick={changeDarkmode}
                     />
+                    <img
+                        style={{width: '22px', marginLeft: '1rem', height: '22px'}}
+                        src={darkMode ? "/icons/light/sound_mude_light.svg" : "/icons/dark/sound_mude_dark.svg"}
+                    />
                 </div>
             </div>
             <div className={styles.contentMobile}>
-                
+                {SECONDARY_HEADER_MOBILE.map((item, idx) => {
+                    return (
+                        <div className={styles.contentBox}>
+                            <div>
+                                <img src={darkMode ? item.iconLight : item.iconDark} />
+                                <p>{item.name}</p>
+                            </div>
+                            {SECONDARY_HEADER_MOBILE.length - 1 !== idx && <label />}
+                        </div>
+                    );
+                })}
             </div>
         </div>
     )
