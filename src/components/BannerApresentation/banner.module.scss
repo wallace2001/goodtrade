@@ -1,12 +1,13 @@
 .container{
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 20px;
-    margin-top: 50px;
 
     padding: 1rem 2rem;
 
     transition: width 0.2s, padding 0.2s;
+
+    font-size: 85%;
 
     header{
         display: flex;
@@ -72,6 +73,7 @@
         flex-direction: column;
 
         .title{
+            font-size: 25px;
             color: var(--white);
         }
 

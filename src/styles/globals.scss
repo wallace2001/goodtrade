@@ -122,13 +122,8 @@
   }
 }
 
-:global(.dark-mode){
-  body{
-    background: var(--background-darkmode);
-  }
-}
-
 body {
+  background: var(--background-darkmode);
   color: var(--white);
 }
 

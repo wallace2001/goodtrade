@@ -41,7 +41,7 @@ export const Main = () => {
                             more={false}
                         />
                         <Box
-                            title="Minhas Ligas"
+                            title="Melhores Tipster"
                             icon='/icons/tipster.svg'
                             item={BEST_TIPSTER}
                             more={true}
@@ -60,7 +60,7 @@ export const Main = () => {
                             <p>Calculadoras de Apostas</p>
                         </button>
                         <Box
-                            title="Minhas Equipes"
+                            title="Escolher País"
                             icon='/icons/countrie.svg'
                             item={COUNTRIES}
                             button={{

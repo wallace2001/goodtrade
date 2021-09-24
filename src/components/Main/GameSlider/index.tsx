@@ -29,6 +29,7 @@ export const GameSlider = ({item}: PropsGameScroll) => {
     { width: 550, itemsToShow: 2 },
     { width: 768, itemsToShow: 3 },
     { width: 1200, itemsToShow: 4 },
+    { width: 1800, itemsToShow: 5 },
   ];
 
   const itens = [
