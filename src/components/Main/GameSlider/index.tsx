@@ -65,7 +65,7 @@ export const GameSlider = ({item}: PropsGameScroll) => {
                   <div><img loading="lazy" src={item.team[0].icon} alt={item.team[0].name} /></div>
                   <p style={{
                       color: 'var(--light-100)'}}>VS</p>
-                  <div><img loading="lazy" src={item.team[1].icon} alt={item.team[1].name} /></div>
+                  <div><img loading='lazy' src={item.team[1].icon} alt={item.team[1].name} /></div>
               </div>
               <div className={styles.info}>
                   <strong style={{

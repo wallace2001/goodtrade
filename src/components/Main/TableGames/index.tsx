@@ -1,6 +1,7 @@
 import { Progress } from 'antd';
 import React, { useState } from 'react';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import { BUTTONS_GAME } from '../../../../constants/constants';
 import { light } from '../../../../constants/theme';
 import { getContext } from '../../../context/context.global';
 import { FilteredNames } from '../../utils/Filter';
@@ -126,15 +127,11 @@ const TableGames = ({item}: TableGamesProps) => {
                             />
                         </div>
                             <div className={styles.buttonsGame}>
-                                <label>
-                                    <img loading="lazy" src="/icons/monitor.svg" alt="" />
-                                </label>
-                                <label>
-                                    <img loading="lazy" src="/icons/fone.svg" alt="" />
-                                </label>
-                                <label>
-                                    <img loading="lazy" src="/icons/camisa.svg" alt="" />
-                                </label>
+                                {BUTTONS_GAME.map(item => (
+                                    <label key={item.id}>
+                                        <img src={item.icon} />
+                                    </label>
+                                ))}
                             </div>
                     </div>
                 ))}

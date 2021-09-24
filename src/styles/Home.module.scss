@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     transition: background-image 0.2s;
 
-    @media (max-width: 720px){
+    @media screen and (max-width: 720px){
       background-image: url('/images/background_mobile_light.png');
     }
   }

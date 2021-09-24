@@ -78,7 +78,7 @@ export const HeaderSecondary = () => {
             <div className={styles.contentMobile}>
                 {SECONDARY_HEADER_MOBILE.map((item, idx) => {
                     return (
-                        <div className={styles.contentBox}>
+                        <div key={idx} className={styles.contentBox}>
                             <div>
                                 <img loading="lazy" src={darkMode ? item.iconLight : item.iconDark} />
                                 <p>{item.name}</p>

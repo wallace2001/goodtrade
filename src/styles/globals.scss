@@ -116,8 +116,19 @@
   }
 }
 
+@media (max-width: 520px){
+  html {
+    font-size: 75.5%;
+  }
+}
+
+:global(.dark-mode){
+  body{
+    background: var(--background-darkmode);
+  }
+}
+
 body {
-  background: var(--background-darkmode);
   color: var(--white);
 }
 

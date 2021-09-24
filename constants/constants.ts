@@ -502,3 +502,31 @@ export const SECONDARY_HEADER_MOBILE = [
         iconLight: "/icons/light/plus.svg",
     },
 ];
+
+export const BUTTONS_GAME = [
+    {
+        id: '4',
+        icon: '/icons/book.svg',  
+    },
+    {
+        id: '5',
+        icon: '/icons/static.svg',  
+    },
+    {
+        id: '6',
+        icon: '/icons/alvo.svg',  
+    },
+    {
+        id: '1',
+        icon: '/icons/monitor.svg',  
+    },
+    {
+        id: '2',
+        icon: '/icons/fone.svg',  
+    },
+    {
+        id: '3',
+        icon: '/icons/camisa.svg',  
+    },
+
+];

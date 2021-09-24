@@ -143,6 +143,7 @@ export const Main = () => {
                                     link.link !== null &&
                                     link.link.map(item => (
                                         <TableGames
+                                            key={item.id}
                                             item={item}
                                         />
                                     ))
