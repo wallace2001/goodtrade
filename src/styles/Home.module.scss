@@ -12,6 +12,12 @@
     @media (max-width: 720px){
       background-image: url('/images/background_mobile_light.png');
     }
+
+    .substract{
+      @media (max-width: 720px){
+        display: none;
+      }
+    }
   }
 }
 
