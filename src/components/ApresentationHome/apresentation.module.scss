@@ -70,12 +70,14 @@
     }
 
     .links{
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
 
         a{
             cursor: pointer;
+            margin-top: 1rem;
             & + a{
                 margin-left: 1rem;
             }

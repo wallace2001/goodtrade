@@ -8,8 +8,6 @@
         width: 100%;
         height: 100%;
 
-        padding: 35px 41px;
-
         @media (max-width: 800px){
             padding: 2rem 0;
         }
@@ -18,9 +16,19 @@
         flex-direction: column;
         justify-content: space-between;
 
+        .contentBlur{
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(128.85deg, rgba(1, 68, 116, .65) 0%, rgba(1, 68, 116, .95) 100.88%);
+            filter: blur(50);
+          }
+
         .box{
             width: 100%;
             height: 100%;
+
+            padding: 35px 20px;
 
             display: flex;
         }
@@ -208,7 +216,7 @@
                 height: calc(100% - 70px);
 
                 margin: 0.5rem 0;
-                padding: 2rem;
+                padding: 2rem 25px;
                 border-radius: 10px;
 
                 .games{

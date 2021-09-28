@@ -66,7 +66,7 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                             </button>
                             :
                             <button key={idx} className={styles.buttonTable} style={{
-                                paddingTop: '0.6rem'
+                                paddingTop: '1.1rem',
                             }}>
                                 <h4 style={{
                                     color: 'var(--light)'

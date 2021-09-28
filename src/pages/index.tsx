@@ -23,7 +23,7 @@ export default function Home() {
         <main className={styles.content}>
           <ApresentationHome />
           <div className={styles.banner}>
-            <img src={darkMode ?
+            <img src={!darkMode ?
             '/images/dark/dark_demo.png' :
             '/images/light/light_demo.png'} />
           </div>

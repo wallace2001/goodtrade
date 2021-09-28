@@ -28,132 +28,134 @@ export const Main = () => {
                     backgroundColor: '',
                 }
             } className={styles.content}>
-                <div className={styles.box}>
-                    <div className={styles.left}>
-                        <Box
-                            title="Minhas Ligas"
-                            icon='/icons/myliga.svg'
-                            item={MY_LEAGUES}
-                            more={false}
-                        />
-                        <Box
-                            title="Melhores Tipster"
-                            icon='/icons/tipster.svg'
-                            item={BEST_TIPSTER}
-                            more={true}
-                        />
-                        <Box
-                            title="Minhas Equipes"
-                            icon='/icons/myliga.svg'
-                            button={{
-                                title: '+ Adicionar Nova Equipe',
-                                type: 'button'
-                            }}
-                            more={false}
-                        />
-                        <button className={styles.calculator}>
-                            <img loading="lazy" src="/icons/calculator.svg" alt="Calculator" />
-                            <p>Calculadoras de Apostas</p>
-                        </button>
-                        <Box
-                            title="Escolher País"
-                            icon='/icons/countrie.svg'
-                            item={COUNTRIES}
-                            button={{
-                                title: 'Pesquisar',
-                                type: 'search'
-                            }}
-                            more={true}
-                        />
-                    </div>
-                    <div className={styles.right}>
-                        <header>
-                            <div className={styles.header}>
-                                <div style={
-                                    darkMode ?
-                                    {...light.backgroundBoxGameDetailsLight} : 
-                                    {...light.backgroundBoxGameDetailsDark}
-                                } className={styles.headerGame}>
-                                    {HEADER_GAME.map((item, idx) => (
-                                        <button key={idx}>
-                                            <p style={{
-                                                ...light.word
-                                            }} key={item.name}>{item.name}</p>
-                                            {item.name === 'Todos' && <div />}
-                                        </button>
-                                    ))}
-                                    {darkMode ? <img loading="lazy" src="/icons/light/settings_light.svg" /> : <img loading="lazy" src="/icons/dark/settings_dark.svg" />}
-                                </div>
-                                <div style={
-                                    darkMode ?
-                                    {...light.backgroundBoxGameDetailsLight} : 
-                                    {...light.backgroundBoxGameDetailsDark}
-                                } className={styles.date}>
-                                    <label>
-                                        <MdKeyboardArrowLeft
-                                            color={'var(--light)'}
-                                            size={25}
-                                        />
-                                    </label>
-                                    <p style={{
-                                        ...light.word,
-                                    }}>28/08 Qua</p>
-                                    <label>
-                                        <MdKeyboardArrowRight
-                                            color={'var(--light)'}
-                                            size={25}
-                                        />
-                                    </label>
-                                </div>
-                                <div></div>
-                            </div>
-                        </header>
-                        <main style={
-                                darkMode ? 
-                                {...light.backgroundBoxGameDetailsLight} : 
-                                {...light.backgroundBoxGameDetailsDark}
-                        }>
-                            <GameScrollList
-                                title="Partidas Ao Vivo"
-                                item={GAME}
+                <div className={styles.contentBlur}>
+                    <div className={styles.box}>
+                        <div className={styles.left}>
+                            <Box
+                                title="Minhas Ligas"
+                                icon='/icons/myliga.svg'
+                                item={MY_LEAGUES}
+                                more={false}
                             />
-                            <div className={styles.games}>
-                                <header>
-                                    <img
-                                        loading="lazy"
-                                        src={darkMode ? "/images/light/background_title.svg" : "/images/dark/background_title.svg"}
-                                        alt="header"
-                                    />
+                            <Box
+                                title="Melhores Tipster"
+                                icon='/icons/tipster.svg'
+                                item={BEST_TIPSTER}
+                                more={true}
+                            />
+                            <Box
+                                title="Minhas Equipes"
+                                icon='/icons/myliga.svg'
+                                button={{
+                                    title: '+ Adicionar Nova Equipe',
+                                    type: 'button'
+                                }}
+                                more={false}
+                            />
+                            <button className={styles.calculator}>
+                                <img loading="lazy" src="/icons/calculator.svg" alt="Calculator" />
+                                <p>Calculadoras de Apostas</p>
+                            </button>
+                            <Box
+                                title="Escolher País"
+                                icon='/icons/countrie.svg'
+                                item={COUNTRIES}
+                                button={{
+                                    title: 'Pesquisar',
+                                    type: 'search'
+                                }}
+                                more={true}
+                            />
+                        </div>
+                        <div className={styles.right}>
+                            <header>
+                                <div className={styles.header}>
                                     <div style={
                                         darkMode ?
-                                        {...light.imageBackgroundTitleGameLight} :
-                                        {...light.imageBackgroundTitleGameDark}
-                                    }>
-                                        <p>{HEADERS.find(title => {
-                                            return title.value === categorie;
-                                        })?.name}</p>
+                                        {...light.backgroundBoxGameDetailsLight} : 
+                                        {...light.backgroundBoxGameDetailsDark}
+                                    } className={styles.headerGame}>
+                                        {HEADER_GAME.map((item, idx) => (
+                                            <button key={idx}>
+                                                <p style={{
+                                                    ...light.word
+                                                }} key={item.name}>{item.name}</p>
+                                                {item.name === 'Todos' && <div />}
+                                            </button>
+                                        ))}
+                                        {darkMode ? <img loading="lazy" src="/icons/light/settings_light.svg" /> : <img loading="lazy" src="/icons/dark/settings_dark.svg" />}
                                     </div>
-                                </header>
-                                {HEADERS.map(link => (
-                                    link.value === categorie &&
-                                    link.link !== null &&
-                                    link.link.map(item => (
-                                        <TableGames
-                                            key={item.id}
-                                            item={item}
+                                    <div style={
+                                        darkMode ?
+                                        {...light.backgroundBoxGameDetailsLight} : 
+                                        {...light.backgroundBoxGameDetailsDark}
+                                    } className={styles.date}>
+                                        <label>
+                                            <MdKeyboardArrowLeft
+                                                color={'var(--light)'}
+                                                size={25}
+                                            />
+                                        </label>
+                                        <p style={{
+                                            ...light.word,
+                                        }}>28/08 Qua</p>
+                                        <label>
+                                            <MdKeyboardArrowRight
+                                                color={'var(--light)'}
+                                                size={25}
+                                            />
+                                        </label>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </header>
+                            <main style={
+                                    darkMode ? 
+                                    {...light.backgroundBoxGameDetailsLight} : 
+                                    {...light.backgroundBoxGameDetailsDark}
+                            }>
+                                <GameScrollList
+                                    title="Partidas Ao Vivo"
+                                    item={GAME}
+                                />
+                                <div className={styles.games}>
+                                    <header>
+                                        <img
+                                            loading="lazy"
+                                            src={darkMode ? "/images/light/background_title.svg" : "/images/dark/background_title.svg"}
+                                            alt="header"
                                         />
-                                    ))
-                                ))}
-                            </div>
-                        </main>
+                                        <div style={
+                                            darkMode ?
+                                            {...light.imageBackgroundTitleGameLight} :
+                                            {...light.imageBackgroundTitleGameDark}
+                                        }>
+                                            <p>{HEADERS.find(title => {
+                                                return title.value === categorie;
+                                            })?.name}</p>
+                                        </div>
+                                    </header>
+                                    {HEADERS.map(link => (
+                                        link.value === categorie &&
+                                        link.link !== null &&
+                                        link.link.map(item => (
+                                            <TableGames
+                                                key={item.id}
+                                                item={item}
+                                            />
+                                        ))
+                                    ))}
+                                </div>
+                            </main>
+                        </div>
                     </div>
+                    <footer>
+                        <p style={{
+                            textAlign: 'center',
+                            ...light.word,
+                        }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </footer>
                 </div>
-                <footer>
-                    <p style={{
-                        textAlign: 'center',
-                        ...light.word,
-                    }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </footer>
             </div>
             <footer
                 style={{
