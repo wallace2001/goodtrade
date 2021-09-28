@@ -76,6 +76,9 @@
             @media (max-width: 600px){
                 padding: 1rem 0.5rem;
             }
+            @media (max-width: 1200px){
+                padding: 1rem 0rem 1rem 0rem;
+            }
 
             header{
                 width: 100%;
@@ -107,6 +110,7 @@
                             flex-direction: column;
                             background-color: transparent;
                             border: none;
+                            padding: 0 1rem;
 
                             p{
                                 margin-top: 1.75rem;
@@ -125,6 +129,7 @@
                             transition: background-color 0.2s;
     
                             &:hover{
+
                                 background-color: var(--background-header);
                             }
                         }
@@ -213,14 +218,14 @@
                 height: calc(100% - 70px);
 
                 margin: 0.5rem 0;
-                padding: 2rem 25px;
+                padding: 2rem 0;
                 border-radius: 10px;
                 background-origin: padding-box;
 
                 .games{
                     width: 100%;
                     height: 100%;
-                    padding: 2rem 0;
+                    padding: 2rem 25px;
 
                     header{
                         width: 20rem;

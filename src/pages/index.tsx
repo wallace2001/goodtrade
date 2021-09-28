@@ -21,9 +21,11 @@ export default function Home() {
         </Head>
         <Header haveBackground={false} />
         <main className={styles.content}>
-          <ApresentationHome />
+          <div className={styles.apresentation}>
+            <ApresentationHome />
+          </div>
           <div className={styles.banner}>
-            <img src={!darkMode ?
+            <img className={styles.image} src={!darkMode ?
             '/images/dark/dark_demo.png' :
             '/images/light/light_demo.png'} />
           </div>

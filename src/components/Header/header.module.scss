@@ -73,6 +73,11 @@
             margin-left: 1rem;
             border-radius: 10px;
             color: var(--white);
+            &:hover{
+                transform: scale(1.04);
+                -webkit-box-shadow: 1px 12px 24px -5px rgba(0,0,0,0.61); 
+                box-shadow: 1px 12px 24px -5px rgba(0,0,0,0.61);
+            }
 
         }
 
@@ -257,6 +262,10 @@
             margin-left: 1rem;
             border-radius: 10px;
             color: var(--white);
+
+            &:hover{
+                filter: brightness(0.9);
+            }
 
         }
         button:disabled{

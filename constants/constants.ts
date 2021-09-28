@@ -203,15 +203,6 @@ export const GAME = [
         time: '2nd Half 6.7"',
         live: true,
     },
-    {
-        team: [
-            {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-            {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
-        ],
-        league: 'Football / England Premier League',
-        time: '2nd Half 6.7"',
-        live: true,
-    },
 ];
 
 export const FOOTBALL = [
