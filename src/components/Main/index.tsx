@@ -28,11 +28,7 @@ export const Main = () => {
                     backgroundColor: '',
                 }
             } className={styles.content}>
-                <div style={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                }}>
+                <div className={styles.box}>
                     <div className={styles.left}>
                         <Box
                             title="Minhas Ligas"

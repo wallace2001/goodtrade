@@ -161,6 +161,9 @@ export const HEADER_GAME = [
     {
         name: 'Agendados',
     },
+    {
+        name: 'Analises & Prognósticos',
+    },
 ];
 
 export const GAME = [

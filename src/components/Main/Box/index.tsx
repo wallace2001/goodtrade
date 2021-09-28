@@ -50,7 +50,8 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                         return (
                             item.percentPlayers ?
                             <button key={idx} className={styles.buttonTable} disabled={true} style={{
-                                justifyContent: 'space-between'
+                                justifyContent: 'space-between',
+                                paddingTop: '0.2rem'
                             }}>
                                 <div>
                                     <h2 style={{
@@ -61,10 +62,12 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                                         color: 'var(--light)',
                                     }}>{value && value[0]} <strong>{value && value[1]}</strong></h4>
                                 </div>
-                                <h3 style={{color: 'var(--green-100)'}}>{item.percentPlayers}</h3>
+                                <h3 style={{color: 'var(--green-100)', fontSize: 17}}>{item.percentPlayers}</h3>
                             </button>
                             :
-                            <button key={idx} className={styles.buttonTable}>
+                            <button key={idx} className={styles.buttonTable} style={{
+                                paddingTop: '0.6rem'
+                            }}>
                                 <h4 style={{
                                     color: 'var(--light)'
                                 }}>{value && value[0]} <strong style={{
@@ -90,7 +93,9 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                         {item?.map((item, idx) => {
                             const value = FilteredNames(item);
                             return (
-                                <button key={idx} className={styles.buttonTable}>
+                                <button key={idx} className={styles.buttonTable} style={{
+                                    paddingTop: '0.6rem'
+                                }}>
                                     <h4 style={{
                                         color: 'var(--light)',
                                     }}>{ value && value[0]} <strong style={{

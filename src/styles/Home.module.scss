@@ -61,6 +61,24 @@
       padding: 10px 10px;
     }
 
+    .banner{
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+
+      @media (max-width: 1200px){
+        width: 80%;
+        height: 80%;
+        border-radius: 20px;
+      }
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
     .boxBot{
       height: 93px;
       width: 25rem;

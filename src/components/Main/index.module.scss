@@ -8,7 +8,7 @@
         width: 100%;
         height: 100%;
 
-        padding: 2rem 1.93rem;
+        padding: 35px 41px;
 
         @media (max-width: 800px){
             padding: 2rem 0;
@@ -17,6 +17,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        .box{
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+        }
 
         .left{
             flex: 1;
@@ -59,7 +66,7 @@
             width: 100%;
             flex: 5;
             height: 100%;
-            padding: 1rem 2rem;
+            padding: 1rem 0rem 1rem 2rem;
 
             @media (max-width: 600px){
                 padding: 1rem 0.5rem;
@@ -97,14 +104,14 @@
                             border: none;
 
                             p{
-                                margin-top: 1.25rem;
+                                margin-top: 1.75rem;
                                 font-size: 16px;
                                 font-weight: 400;
                             }
     
                             div{
                                 width: 100%;
-                                height: 10px;
+                                height: 5px;
                                 border-radius: 5px 5px 0 0;
     
                                 background-color: var(--light);
@@ -200,7 +207,7 @@
                 width: 100%;
                 height: calc(100% - 70px);
 
-                margin: 2rem 0;
+                margin: 0.5rem 0;
                 padding: 2rem;
                 border-radius: 10px;
 
@@ -211,14 +218,14 @@
 
                     header{
                         width: 20rem;
-                        height: 60px;
+                        height: 50px;
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
 
                         img{
-                            width: 98px;
-                            height: 98px;
+                            width: 68px;
+                            height: 68px;
                             z-index: 2;
 
                             object-fit: contain;
@@ -237,7 +244,7 @@
                         }
 
                         p{
-                            margin-top: 1.1rem;
+                            margin-top: 0.8em;
                             font-size: 17px;
                             font-weight: bold;
                             font-style: italic;

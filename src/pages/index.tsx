@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { ApresentationHome } from '../components/ApresentationHome'
-import { BannerApresentation } from '../components/BannerApresentation'
 import { Header } from '../components/Header'
 import { HeaderSecondary } from '../components/Header/HeaderSecondary'
 import { Main } from '../components/Main'
@@ -23,7 +22,11 @@ export default function Home() {
         <Header haveBackground={false} />
         <main className={styles.content}>
           <ApresentationHome />
-          <BannerApresentation />
+          <div className={styles.banner}>
+            <img src={darkMode ?
+            '/images/dark/dark_demo.png' :
+            '/images/light/light_demo.png'} />
+          </div>
 
           <div className={styles.boxBot}>
                 <img loading="lazy" src='/icons/button_home.png' />
