@@ -215,6 +215,7 @@
                 margin: 0.5rem 0;
                 padding: 2rem 25px;
                 border-radius: 10px;
+                background-origin: padding-box;
 
                 .games{
                     width: 100%;
@@ -309,7 +310,7 @@
             div{
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: center;
 
                 label{
                     width: 25px;
