@@ -39,6 +39,13 @@ export const light = {
     imageBackgroundTitleGameLight: {
         background: 'linear-gradient(90deg, #2865FF 50.13%, rgba(255, 255, 255, 0) 99.51%)',
     },
+    backgroundMainDark: {
+        background: 'linear-gradient(128.85deg, rgba(1, 68, 116, .65) 0%, rgba(1, 68, 116, .95) 100.88%)',
+        filter: 'blur(50)',
+    },
+    backgroundMainLight: {
+        background: 'transparent',
+    },
     buttonLoginEcramBigger: {
         background: '#003A63',
         border: '1px solid var(--blue-150)',
