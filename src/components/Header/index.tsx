@@ -22,6 +22,7 @@ export const Header = ({haveBackground}: PropsHeader) => {
         darkMode,
         changeTools,
         changeDarkmode,
+        changeViewerLoginAndRegister,
      } = getContext();
 
     const isEcramBigger80 = scroll >= 80;
@@ -110,7 +111,9 @@ export const Header = ({haveBackground}: PropsHeader) => {
                             {...light.buttonLoginEcramBigger} :
                             {...light.buttonLogin}
                         }
-                        disabled={true}
+                        onClick={() => 
+                            changeViewerLoginAndRegister('Login')
+                        }
                     >Entrar</button>
                     <button
                         style={
@@ -118,7 +121,10 @@ export const Header = ({haveBackground}: PropsHeader) => {
                             {...light.buttonCreateEcramBigger} :
                             {...light.buttonCreate}
                         }
-                    >Login</button>
+                        onClick={() => 
+                            changeViewerLoginAndRegister('Register')
+                        }
+                    >Cadastrar</button>
                 </div>
             </div>
             <div className={styles.contentMobile}>

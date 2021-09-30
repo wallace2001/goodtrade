@@ -8,10 +8,12 @@ interface ContextProps{
     scroll: number;
     categorie: string;
     darkMode: boolean;
+    isOpenLoginAndRegister: string;
     changeLanguage: (value: string) => void;
     changeTools: (value: string) => void;
     changeCategories: (value: string) => void;
     changeDarkmode: () => void;
+    changeViewerLoginAndRegister: (value: string) => void;
 }
 
 interface ProviderProps{
@@ -26,6 +28,7 @@ export const GlobalProvider = ({children}: ProviderProps) => {
     const [language, setLanguage] = useState<string>('br');
     const [darkMode, setDarkMode] = useState<boolean>(false);
     const [isBigger80, setIsBigger80] = useState<boolean>(false);
+    const [isOpenLoginAndRegister, setIsOpenLoginAndRegister] = useState<string>('');
 
     const dispatch = useDispatch();
     const { categorie } = useSelector((state: RootStateOrAny) => state.categoryReducer);
@@ -63,6 +66,10 @@ export const GlobalProvider = ({children}: ProviderProps) => {
         const $html = document.querySelector('html');
         $html?.classList.toggle('dark-mode');
     };
+
+    const changeViewerLoginAndRegister = (value: string) => {
+        setIsOpenLoginAndRegister(value);
+    };
     
     useEffect(() => {
         window.onscroll = () => setTamScroll(document.documentElement.scrollTop);
@@ -79,10 +86,12 @@ export const GlobalProvider = ({children}: ProviderProps) => {
             scroll,
             categorie,
             darkMode,
+            isOpenLoginAndRegister,
             changeLanguage,
             changeCategories,
             changeTools,
             changeDarkmode,
+            changeViewerLoginAndRegister,
         }}>
             {children}
         </GlobalContext.Provider>
