@@ -3,7 +3,7 @@ import { BsPlus } from 'react-icons/bs';
 import { FaFacebookF, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ImInstagram } from 'react-icons/im';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { BEST_TIPSTER, COUNTRIES, GAME, HEADERS, HEADER_GAME, MY_LEAGUES } from '../../../constants/constants';
+import { BEST_TIPSTER, COUNTRIES, GAMESLIDEFOODBALL, HEADERS, HEADER_GAME, MY_LEAGUES } from '../../../constants/constants';
 import { light } from '../../../constants/theme';
 import { getContext } from '../../context/context.global';
 import { Box } from './Box';
@@ -120,7 +120,7 @@ export const Main = () => {
                             }>
                                 <GameScrollList
                                     title="Partidas Ao Vivo"
-                                    item={GAME}
+                                    item={GAMESLIDEFOODBALL}
                                 />
                                 <div className={styles.games}>
                                     <header>
@@ -145,7 +145,7 @@ export const Main = () => {
                                         link.link.map(item => (
                                             <TableGames
                                                 key={item.id}
-                                                item={item}
+                                                item={item as any}
                                             />
                                         ))
                                     ))}

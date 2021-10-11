@@ -17,6 +17,8 @@
             .ant-select-dropdown{
                 min-width: 20rem;
                 width: 20rem !important;
+
+                color: white;
             }
         }
         .ant-select-arrow{
@@ -97,6 +99,7 @@
         .right{
             height: 100%;
             display: flex;
+            justify-content: space-between;
             align-items: center;
 
             .links{

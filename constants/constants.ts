@@ -1,40 +1,58 @@
-
 export const TOOLS = [
     {
         name: "Bot Betfair",
         value: "bot_betfair",
+        icon: "robot",
+    },
+    {
+        name: "Bot outras casas de apostas",
+        value: "bot_others",
+        icon: "robot",
     },
     {
         name: "Trade Exchange DEMO",
         value: "trade_exchange_demo",
+        icon: "change",
     },
     {
         name: "Punter DEMO",
         value: "punter_demo",
+        icon: "circle",
+    },
+    {
+        name: "Gestão da banca",
+        value: "gestao_banca",
+        icon: "coins",
     },
     {
         name: "Simulador de estratégias",
         value: "simulador_de_estrategias",
+        icon: "simulator",
     },
     {
         name: "Odd Justa",
         value: "odd_justa",
+        icon: "coin",
     },
     {
         name: "Gráfico de Pressão",
         value: "grafico_de_pressao",
+        icon: "graph",
     },
     {
         name: "Gráfico de Pizza",
         value: "grafico_de_pizza",
+        icon: "pizza",
     },
     {
         name: "Calculadora multiplas",
         value: "calculadora_multiplas",
+        icon: "calculator",
     },
     {
         name: "Calculadoras",
         value: "calculadoras",
+        icon: "calculator",
     },
 ];
 
@@ -42,12 +60,12 @@ export const FLAGS = [
     {
         name: "BR",
         value: "br",
-        icon: "/flags/"
+        icon: "/flags/br.svg"
     },
     {
         name: "EN",
         value: "en",
-        icon: "/flags/"
+        icon: "/flags/en.svg"
     },
 ];
 
@@ -166,7 +184,7 @@ export const HEADER_GAME = [
     },
 ];
 
-export const GAME = [
+export const GAMESLIDEFOODBALL = [
     {
         team: [
             {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
@@ -210,6 +228,7 @@ export const FOOTBALL = [
         id: '1',
         title: "Alemanhã 3ª Liga",
         icon: '/flags/de.svg',
+        type: 'futbol',
         game: [
                 {
                     team: [
@@ -262,6 +281,7 @@ export const FOOTBALL = [
         id: '2',
         title: "Brasileiro Série B",
         icon: '/flags/br.svg',
+        type: 'futbol',
         game: [
             {
             team: [
@@ -335,6 +355,7 @@ export const BASKETBALL = [
         id: '1',
         title: "NBA Liga Americana",
         icon: '/flags/usa.svg',
+        type: 'basket',
         game: [
                 {
                     team: [
@@ -351,7 +372,7 @@ export const BASKETBALL = [
                         {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
-                    time: '08:19 3st Q.',
+                    time: 490,
                     live: true,
                 },
                 {
@@ -367,6 +388,206 @@ export const BASKETBALL = [
                     team: [
                         {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
                         {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+            ],
+    },
+    {
+        id: '2',
+        title: "NBA Liga Americana",
+        icon: '/flags/usa.svg',
+        type: 'basket',
+        game: [
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
+                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+            ],
+    },
+];
+
+export const HOQUEI = [
+    {
+        id: '1',
+        title: "NewYork Yankees",
+        icon: '/team/new_york.svg',
+        type: 'hoquei',
+        game: [
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+            ],
+    },
+    {
+        id: '2',
+        title: "NewYork Yankees",
+        icon: '/team/new_york.svg',
+        type: 'basebol',
+        game: [
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5, 5, 5, 5], icon: '/team/berlin.svg'},
+                        {name: 'Houston Astros', score: [2, 2, 2, 2], icon: '/team/redbull.svg'},
+                    ],
+                    league: 'Alemanhã DEL',
+                    time: 490,
+                    live: true,
+                },
+            ],
+    },
+];
+
+export const BASEBOL = [
+    {
+        id: '1',
+        title: "NewYork Yankees",
+        icon: '/team/new_york.svg',
+        type: 'basebol',
+        game: [
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5], icon: '/team/new_york.svg'},
+                        {name: 'Houston Astros', score: [2], icon: '/team/houston.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5], icon: '/team/new_york.svg'},
+                        {name: 'Houston Astros', score: [2], icon: '/team/houston.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5], icon: '/team/new_york.svg'},
+                        {name: 'Houston Astros', score: [2], icon: '/team/houston.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5], icon: '/team/new_york.svg'},
+                        {name: 'Houston Astros', score: [2], icon: '/team/houston.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: '08:19 3st Q.',
@@ -377,12 +598,22 @@ export const BASKETBALL = [
     {
         id: '2',
         title: "NBA Liga Americana",
-        icon: '/flags/usa.svg',
+        icon: '/team/atlanta.svg',
+        type: 'basebol',
         game: [
                 {
                     team: [
-                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
-                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                        {name: 'NewYork Yankees', score: [5], icon: '/team/new_york.svg'},
+                        {name: 'Houston Astros', score: [2], icon: '/team/houston.svg'},
+                    ],
+                    league: 'Alemanhã 3ª Liga',
+                    time: 490,
+                    live: true,
+                },
+                {
+                    team: [
+                        {name: 'NewYork Yankees', score: [5], icon: '/team/new_york.svg'},
+                        {name: 'Houston Astros', score: [2], icon: '/team/houston.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: '08:19 3st Q.',
@@ -390,8 +621,8 @@ export const BASKETBALL = [
                 },
                 {
                     team: [
-                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
-                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                        {name: 'NewYork Yankees', score: [5], icon: '/team/new_york.svg'},
+                        {name: 'Houston Astros', score: [2], icon: '/team/houston.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: '08:19 3st Q.',
@@ -399,17 +630,8 @@ export const BASKETBALL = [
                 },
                 {
                     team: [
-                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
-                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
-                    ],
-                    league: 'Alemanhã 3ª Liga',
-                    time: '08:19 3st Q.',
-                    live: true,
-                },
-                {
-                    team: [
-                        {name: 'L.Larkers', goals: 65, icon: '/team/lakers.svg'},
-                        {name: 'Atlanta Hawks', goals: 61, icon: '/team/atlanta.svg'},
+                        {name: 'NewYork Yankees', score: [5], icon: '/team/new_york.svg'},
+                        {name: 'Houston Astros', score: [2], icon: '/team/houston.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: '08:19 3st Q.',
@@ -423,7 +645,7 @@ export const HEADERS = [
     {
         name: "Favoritos",
         value: "favoritos",
-        link: null,
+        link: BASEBOL,
         iconDark: "/icons/dark/tenis.svg",
         iconLight: "/icons/light/tenis.svg",
     },
@@ -451,7 +673,7 @@ export const HEADERS = [
     {
         name: "Hóquei",
         value: "hoquei",
-        link: null,
+        link: HOQUEI,
         iconDark: "/icons/dark/hoquei.svg",
         iconLight: "/icons/light/hoquei.svg",
     },
@@ -461,6 +683,189 @@ export const HEADERS = [
         link: null,
         iconDark: "/icons/dark/handbol.svg",
         iconLight: "/icons/light/handbol.svg",
+    },
+];
+
+export const OTHERS = [
+    {
+        name: "Bandminton",
+        value: "bandminton",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Bandy",
+        value: "bandy",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Basebol",
+        value: "basebol",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Basebol Finlandês",
+        value: "basebol_finlandes",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Boxe",
+        value: "boxe",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Cavalos",
+        value: "cavalos",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Ciclismo",
+        value: "ciclismo",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Críquete",
+        value: "criquete",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Dardos",
+        value: "dardos",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Desportos Inverno",
+        value: "desportos_inverno",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Desportos motor",
+        value: "desportos_motor",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "eSports",
+        value: "esports",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Floorball",
+        value: "floorball",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Futebol am.",
+        value: "futebolam",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Futebol Aus.",
+        value: "futebolaus",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Futebol de praia",
+        value: "futebol_de_praia",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Futsal",
+        value: "futsal",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Futsal",
+        value: "futsal",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Golfe",
+        value: "golfe",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Hóquei no campo",
+        value: "hoquei_no_campo",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Kabaddi",
+        value: "kabaddi",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "MMA",
+        value: "mma",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Netball",
+        value: "netball",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Polo aquático",
+        value: "polo_aquatico",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Rugby",
+        value: "rugby",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Rugby League",
+        value: "rugby_league",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Snooker",
+        value: "snooker",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Tênis de mesa",
+        value: "tenis_de_mesa",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Voleibol",
+        value: "voleibol",
+        link: null,
+        icon: '',
+    },
+    {
+        name: "Voleibol de praia",
+        value: "voleibo_de_praial",
+        link: null,
+        icon: '',
     },
 ];
 

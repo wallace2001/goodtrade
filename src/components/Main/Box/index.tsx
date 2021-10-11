@@ -2,7 +2,7 @@ import React from 'react';
 import { BiSearch } from 'react-icons/bi';
 import { light } from '../../../../constants/theme';
 import { getContext } from '../../../context/context.global';
-import { FilteredNames } from '../../utils/Filter';
+import { FilteredNames } from '../../../utils/Filter';
 import styles from './index.module.scss';
 
 interface PropsBox{
@@ -36,7 +36,9 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                 <img loading="lazy" src={icon} alt={title} />
                 <h2 style={{
                     ...light.word,
-                }}>{titleFiltered[0]} <strong>{titleFiltered[1]}</strong></h2>
+                }}>{titleFiltered[0]} <strong style={{
+                    fontWeight: 'bold',
+                }}>{titleFiltered[1]}</strong></h2>
             </header>
             <main>
                 {button && item === undefined ? (
@@ -66,11 +68,11 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                             </button>
                             :
                             <button key={idx} className={styles.buttonTable} style={{
-                                paddingTop: '1.1rem',
+                                // paddingTop: '1.1rem',
                             }}>
                                 <h4 style={{
                                     color: 'var(--light)'
-                                }}>{value && value[0]} <strong style={{
+                                }}>{value && value[0]}<strong style={{
                                     ...light.word,
                                 }}>{value && value[1]}</strong></h4>
                             </button>

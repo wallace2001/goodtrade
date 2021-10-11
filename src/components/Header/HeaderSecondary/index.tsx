@@ -2,10 +2,11 @@ import React from 'react';
 import { Select } from 'antd';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
-import { HEADERS, SECONDARY_HEADER_MOBILE } from '../../../../constants/constants';
+import { HEADERS, OTHERS, SECONDARY_HEADER_MOBILE } from '../../../../constants/constants';
 import styles from './index.module.scss';
 import { getContext } from '../../../context/context.global';
 import { light } from '../../../../constants/theme';
+import { Dropdown } from '../../Dropdown';
 
 export const HeaderSecondary = () => {
 
@@ -30,7 +31,19 @@ export const HeaderSecondary = () => {
                         </div>
                     ))}
                 </div>
-                <Select
+                <div style={{
+                    marginRight: '1rem'
+                }}>
+                    <Dropdown
+                        valueActualy='outros'
+                        options={OTHERS}
+                        type='tools'
+                        width={750}
+                        left={600}
+                        justifyContent='flex-start'
+                    />
+                </div>
+                {/* <Select
                     value="Outros"
                     onChange={() => {}}
                     dropdownStyle={{
@@ -50,7 +63,7 @@ export const HeaderSecondary = () => {
                             {item.name}
                         </Select.Option>
                     ))}
-                </Select>
+                </Select> */}
                 <div className={styles.options}>
                     <BiSearchAlt2
                         size={25}

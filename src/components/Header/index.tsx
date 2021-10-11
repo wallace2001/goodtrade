@@ -8,6 +8,7 @@ import { DrawerMobile } from './DrawerMobile';
 import styles from './header.module.scss';
 import { light } from '../../../constants/theme';
 import { BiSearch } from 'react-icons/bi';
+import { Dropdown } from '../Dropdown';
 
 interface PropsHeader{
     haveBackground: boolean;
@@ -53,13 +54,26 @@ export const Header = ({haveBackground}: PropsHeader) => {
                         {...light.wordRevert} :
                         {...light.word}
                     }>ApostaMelhor</h4>
-                    <Select
+                    <div style={{
+                        marginLeft: '2rem'
+                    }}>
+                        <Dropdown
+                            valueActualy={language}
+                            options={FLAGS}
+                            type='flags'
+                            width={100}
+                            justifyContent='center'
+                        />
+                    </div>
+                    {/* <Select
                         style={{
+                            width: '10rem',
                             marginLeft: '1rem',
                             ...light.word
                         }}
                         dropdownStyle={{
-                            backgroundColor: 'rgba(255,255,255,.5)',
+                            background: 'linear-gradient(180deg, rgba(10, 44, 82, 0.8) 0%, rgba(10, 44, 82, 0.4) 100%)',
+                            color: 'var(--white)'
                         }}
                         value={language}
                         onChange={changeLanguage}
@@ -83,10 +97,18 @@ export const Header = ({haveBackground}: PropsHeader) => {
                                 </Select.Option>
                             );
                         })}
-                    </Select>
+                    </Select> */}
                 </div>
                 <div className={styles.right}>
-                    <Select
+
+                        <Dropdown
+                            valueActualy={tools}
+                            options={TOOLS}
+                            type='tools'
+                            width={300}
+                            justifyContent='flex-start'
+                        />
+                    {/* <Select
                         defaultValue={tools}
                         onChange={changeTools}
                         style={{
@@ -104,7 +126,7 @@ export const Header = ({haveBackground}: PropsHeader) => {
                                 {item.name}
                             </Select.Option>
                         ))}
-                    </Select>
+                    </Select> */}
                     <button
                         style={
                             isEcramBigger80 ?
