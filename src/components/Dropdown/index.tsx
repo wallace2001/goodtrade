@@ -17,9 +17,11 @@ interface DropdownProps{
     width: number;
     left?: number;
     justifyContent: string;
+    colorTitle: string;
+    colorArrow: string;
 }
 
-export const Dropdown = ({ options, valueActualy, type, width, justifyContent, left }: DropdownProps) => {
+export const Dropdown = ({ options, valueActualy, type, width, justifyContent, left, colorTitle, colorArrow }: DropdownProps) => {
     const [isOpenOptions, setOpenOptions] = useState<boolean>(false);
     const isTypeEqualFlags = type === 'flags';
 
@@ -30,10 +32,12 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, l
         <div className={styles.container}>
             <label onClick={handleChangeViewerOptions} >
                 {isTypeEqualFlags && <img src="/flags/br.svg" alt="" />}
-                <p>{valueActualy}</p>
+                <p style={{
+                    color: colorTitle,
+                }}>{valueActualy}</p>
                 <MdKeyboardArrowUp 
                     size={25} 
-                    color='var(--light_select-arrow)'
+                    color={colorArrow}
                     style={{
                         marginTop: '0.15rem'
                     }}

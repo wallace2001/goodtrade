@@ -39,31 +39,12 @@ export const HeaderSecondary = () => {
                         options={OTHERS}
                         type='tools'
                         width={750}
-                        left={600}
+                        left={700}
+                        colorTitle='var(--light)'
+                        colorArrow='var(--light)'
                         justifyContent='flex-start'
                     />
                 </div>
-                {/* <Select
-                    value="Outros"
-                    onChange={() => {}}
-                    dropdownStyle={{
-                        backgroundColor: 'rgba(255,255,255,.7)',
-                    }}
-                    style={{
-                        marginRight: '1rem',
-                        marginLeft: '4rem',
-                        ...light.word,
-                    }}
-                >
-                    {HEADERS.map(item => (
-                        <Select.Option
-                            key={item.name}
-                            value={item.name}
-                        >
-                            {item.name}
-                        </Select.Option>
-                    ))}
-                </Select> */}
                 <div className={styles.options}>
                     <BiSearchAlt2
                         size={25}

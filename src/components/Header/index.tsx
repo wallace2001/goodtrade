@@ -62,42 +62,11 @@ export const Header = ({haveBackground}: PropsHeader) => {
                             options={FLAGS}
                             type='flags'
                             width={100}
+                            colorTitle='var(--light_select)'
+                            colorArrow='var(--light_select-arrow)'
                             justifyContent='center'
                         />
                     </div>
-                    {/* <Select
-                        style={{
-                            width: '10rem',
-                            marginLeft: '1rem',
-                            ...light.word
-                        }}
-                        dropdownStyle={{
-                            background: 'linear-gradient(180deg, rgba(10, 44, 82, 0.8) 0%, rgba(10, 44, 82, 0.4) 100%)',
-                            color: 'var(--white)'
-                        }}
-                        value={language}
-                        onChange={changeLanguage}
-                    >
-                        {FLAGS.map((item, index) => {
-                            return (
-                                <Select.Option style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                    }}
-                                    value={item.value} 
-                                    key={index}
-                                >
-                                    <img
-                                        loading="lazy"
-                                        style={{
-                                            marginRight: '0.5rem'
-                                        }}
-                                        src={`${item.icon}${item.value}.svg`} />
-                                    {item.name}
-                                </Select.Option>
-                            );
-                        })}
-                    </Select> */}
                 </div>
                 <div className={styles.right}>
 
@@ -106,27 +75,10 @@ export const Header = ({haveBackground}: PropsHeader) => {
                             options={TOOLS}
                             type='tools'
                             width={300}
+                            colorTitle='var(--light_select)'
+                            colorArrow='var(--light_select-arrow)'
                             justifyContent='flex-start'
                         />
-                    {/* <Select
-                        defaultValue={tools}
-                        onChange={changeTools}
-                        style={{
-                            ...light.word,
-                        }}
-                        dropdownStyle={{
-                            backgroundColor: 'rgba(255,255,255,.7)',
-                        }}
-                    >
-                        {TOOLS.map(item => (
-                            <Select.Option
-                                key={item.value}
-                                value={item.value}
-                            >
-                                {item.name}
-                            </Select.Option>
-                        ))}
-                    </Select> */}
                     <button
                         style={
                             isEcramBigger80 ?

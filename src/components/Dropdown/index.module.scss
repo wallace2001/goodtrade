@@ -1,7 +1,7 @@
 :global(.dark-mode){
     .container{
         .content{
-            background-color: var(--white);
+            background: var(--white);
         }
     }
 }
@@ -60,6 +60,7 @@
                 font-size: 15px;
                 margin-top: 1rem;
                 margin-left: 0.5rem;
+                color: var(--light);
             }
 
             &:hover{
