@@ -72,7 +72,7 @@ export const Box = ({ icon, title, item, button, more }: PropsBox) => {
                             }}>
                                 <h4 style={{
                                     color: 'var(--light)'
-                                }}>{value && value[0]}<strong style={{
+                                }}>{value && value[0]} <strong style={{
                                     ...light.word,
                                 }}>{value && value[1]}</strong></h4>
                             </button>

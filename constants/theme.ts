@@ -9,7 +9,7 @@ export const light = {
         backgroundImage: 'url(/images/background_dark.png)',
     },
     backgroundImageLight: {
-        backgroundImage: 'url(/images/background_light.png)',
+        backgroundImage: 'url(/images/background_light.jpg)',
     },
     backgroundBoxHomeLight: {
         background: 'linear-gradient(130.33deg, rgba(255, 255, 255, 1) -2.68%, rgba(255, 255, 255, 0.1) 101.41%)',

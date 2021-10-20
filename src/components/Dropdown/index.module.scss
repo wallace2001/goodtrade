@@ -1,3 +1,11 @@
+:global(.dark-mode){
+    .container{
+        .content{
+            background-color: var(--white);
+        }
+    }
+}
+
 .container{
     width: auto;
     height: 2rem;

@@ -56,7 +56,7 @@ const TableGames = ({item: itemGame}: TableGamesProps) => {
                     }}>{title && title[1]}</strong></p>
                 </div>
 
-                <a>Classificações ao vivo</a>
+                <a>Jogos ao vivo</a>
 
                 <div></div>
                 <div></div>

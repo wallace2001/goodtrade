@@ -12,19 +12,6 @@ import _ from 'lodash';
 import * as yup from 'yup';
 import { useFormik } from 'formik';
 
-interface InputForm {
-    name: string;
-    password: string;
-}
-
-interface InputFormRegister{
-    name: string;
-    email: string;
-    password: string;
-    passwordConfirmation: string;
-    code: string;
-}
-
 export const Socials = () => {
     return (
         <div className={styles.socialContainer}>
@@ -68,8 +55,6 @@ export const LoginForm = () => {
             password: '',
         }
     });
-
-    console.log(isSubmitting);
 
     return (
         <form
@@ -163,8 +148,38 @@ export const LoginForm = () => {
 
 export const RegisterForm = () => {
 
+    const validationSchema = yup.object().shape({
+        name: yup.string().required('Nome obrigatorio').min(3),
+        email: yup.string().required('Email obrigatoria').email(),
+        password: yup.string().required('Senha obrigatoria').min(6).max(10),
+        passwordConfirm: yup.string().required('Confirme a senha').min(6).max(10),
+        code: yup.string(),
+    });
+
+    const {
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        isSubmitting,
+        setSubmitting,
+        handleSubmit
+    } = useFormik({
+        onSubmit: console.log,
+        validationSchema,
+        initialValues: {
+            name: '',
+            password: '',
+            email: '',
+            passwordConfirm: '',
+            code: '',
+        }
+    });
+
     return (
         <form
+            onSubmit={handleSubmit}
             className={styles.container}
             style={{
                 padding: '10px 50px 10px 137px'
@@ -176,50 +191,243 @@ export const RegisterForm = () => {
             <strong>Bem-vindo, </strong>
             insira seu nome de usuário, email e senha para acessar a plataforma
         </p>
-        <Input
-            className={styles.inputs}
-            placeholder='Seu nome de usuário'
-            prefix={<FaUserAlt size={20} color='var(--blue-100)'/>}
-            type='text'
-        />
+            <Tooltip
+                placement='left'
+                color='var(--red-800)'
+                visible={!_.isEmpty(errors.name)}
+                title={errors.name}
+                id='name'
+            >
+                <div className={styles.inputs}>
+                    <Input
+                        className={styles.input}
+                        placeholder='Seu nome de usuário'
+                        prefix={<FaUserAlt size={20} color='var(--blue-100)'/>}
+                        type='text'
+                        id='name'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.name}
+                        bordered={false}
+                    />
+                    {touched.name &&
+                    !_.isEmpty(errors.name) ?
+                        <AiOutlineWarning
+                            style={{
+                                marginRight: '1rem'
+                            }}
+                            color='var(--red-800)'
+                            size={30} 
+                        /> :
+                        <FaCheckCircle
+                            style={{
+                                marginRight: '1rem'
+                            }}
+                            color='var(--green-100)'
+                            size={30}
+                        />
+                    }
+                    <Tooltip
+                        placement='right'
+                        title='Insira um nome válido: Usuário33'
+                    >
+                        <AiOutlineQuestionCircle size={30} />
+                    </Tooltip>
+                </div>
+            </Tooltip>
 
-        <Input
-            className={styles.inputs}
-            placeholder='Email'
-            prefix={<MdEmail size={20} color='var(--blue-100)'/>}
-            type='text'
-        />
+            <Tooltip
+                placement='left'
+                color='var(--red-800)'
+                visible={!_.isEmpty(errors.email)}
+                title={errors.email}
+                id='email'
+            >            
+            <div className={styles.inputs}>
+                <Input
+                    className={styles.input}
+                    placeholder='Email'
+                    prefix={<MdEmail size={20} color='var(--blue-100)'/>}
+                    type='text'
+                    id='email'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    bordered={false}
+                />
+                {touched.email &&
+                !_.isEmpty(errors.email) ?
+                    <AiOutlineWarning
+                        style={{
+                            marginRight: '1rem'
+                        }}
+                        color='var(--red-800)'
+                        size={30} 
+                    /> :
+                    <FaCheckCircle
+                        style={{
+                            marginRight: '1rem'
+                        }}
+                        color='var(--green-100)'
+                        size={30}
+                    />
+                }
+                <Tooltip
+                    placement='right'
+                    title='Insíra um email válido: email@email.com'
+                >
+                    <AiOutlineQuestionCircle size={30} />
+                </Tooltip>       
+            </div>
+            </Tooltip>
+
         <div style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between'
         }}>
-            <Input
-                className={styles.inputs}
-                placeholder='Senha'
-                prefix={<IoMdKey size={20} color='var(--blue-100)'/>}
-                type='text'
-                style={{
-                    marginRight: '1rem'
-                }}
-            />
-            <Input
-                className={styles.inputs}
-                placeholder='Confirmar senha'
-                prefix={<IoMdKey size={20} color='var(--blue-100)'/>}
-                type='text'
-            />
+            <Tooltip
+                placement='left'
+                color='var(--red-800)'
+                visible={!_.isEmpty(errors.password)}
+                title={errors.password}
+                id='password'
+            >             
+            <div className={styles.inputs}>
+                <Input
+                    className={styles.input}
+                    placeholder='Senha'
+                    prefix={<IoMdKey size={20} color='var(--blue-100)'/>}
+                    type='text'
+                    id='password'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                    style={{
+                        marginRight: '1rem'
+                    }}
+                    bordered={false}
+                />
+                {touched.password &&
+                !_.isEmpty(errors.password) ?
+                    <AiOutlineWarning
+                        style={{
+                            marginRight: '1rem'
+                        }}
+                        color='var(--red-800)'
+                        size={30} 
+                    /> :
+                    <FaCheckCircle
+                        style={{
+                            marginRight: '1rem'
+                        }}
+                        color='var(--green-100)'
+                        size={30}
+                    />
+                }
+                <Tooltip
+                    placement='right'
+                    title='Insira uma combinação de pelo menos seis numeros, letras, sinais de pontuação e simbolos (como: (1 ! a &)'
+                >
+                    <AiOutlineQuestionCircle size={30} />
+                </Tooltip>
+            </div>
+            </Tooltip>
+                <Tooltip
+                    placement='right'
+                    color='var(--red-800)'
+                    visible={!_.isEmpty(errors.passwordConfirm)}
+                    title={errors.passwordConfirm}
+                    id='passwordConfirm'
+                >                
+                <div className={styles.inputs} style={{
+                        marginLeft: '1rem'
+                    }}>
+                    <Input
+                        className={styles.input}
+                        placeholder='Confirmar senha'
+                        prefix={<IoMdKey size={20} color='var(--blue-100)'/>}
+                        type='text'
+                        id='passwordConfirm'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.passwordConfirm}
+                        bordered={false}
+                    />
+                    {touched.passwordConfirm &&
+                    !_.isEmpty(errors.passwordConfirm) ?
+                        <AiOutlineWarning
+                            style={{
+                                marginRight: '1rem'
+                            }}
+                            color='var(--red-800)'
+                            size={30} 
+                        /> :
+                        <FaCheckCircle
+                            style={{
+                                marginRight: '1rem'
+                            }}
+                            color='var(--green-100)'
+                            size={30}
+                        />
+                    }
+                    <Tooltip
+                        placement='bottom'
+                        title='Confirmar senha'
+                    >
+                        <AiOutlineQuestionCircle size={30} />
+                    </Tooltip>
+                </div>
+                </Tooltip>
         </div>
-        <Input
-            className={styles.inputs}
-            placeholder='Confirmar senha'
-            prefix={<FiUsers size={20} color='var(--blue-100)'/>}
-            type='text'
-        />
-        <button
-            type='button'
+        <Tooltip
+            placement='left'
+            color='var(--red-800)'
+            title={errors.code}
+            id='code'
+        >           
+            <div className={styles.inputs}>
+                <Input
+                    className={styles.input}
+                    placeholder='Código'
+                    prefix={<FiUsers size={20} color='var(--blue-100)'/>}
+                    type='text'
+                    id='code'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.code}
+                    bordered={false}
+                />
+                {touched.code &&
+                !_.isEmpty(errors.code) ?
+                    <AiOutlineWarning
+                        style={{
+                            marginRight: '1rem'
+                        }}
+                        color='var(--red-800)'
+                        size={30} 
+                    /> :
+                    <FaCheckCircle
+                        style={{
+                            marginRight: '1rem'
+                        }}
+                        color='var(--green-100)'
+                        size={30}
+                    />
+                }
+                <Tooltip
+                    placement='right'
+                    title='Insira um código válido (Opcional)'
+                >
+                    <AiOutlineQuestionCircle size={30} />
+                </Tooltip>
+            </div>
+        </Tooltip>
+        <Button
+            htmlType='button'
+            loading={isSubmitting}
             className={styles.buttonSubmit}
-        >Entrar</button>
+        >Cadastrar</Button>
         <Socials />
     </form>
     );

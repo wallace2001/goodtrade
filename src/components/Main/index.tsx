@@ -28,11 +28,7 @@ export const Main = () => {
                     backgroundColor: '',
                 }
             } className={styles.content}>
-                <div className={styles.contentBlur} style={
-                    darkMode ?
-                    {...light.backgroundMainLight} :
-                    {...light.backgroundMainDark}
-                }>
+                <div className={styles.contentBlur}>
                     <div className={styles.box}>
                         <div className={styles.left}>
                             <Box
