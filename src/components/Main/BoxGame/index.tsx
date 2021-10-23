@@ -157,7 +157,9 @@ export const BoxGame = ({team, league, time, live, type}: BoxGameProps) => {
                         className={styles.buttonsDown}
                         onClick={changeVisibilityStatus}
                     >
-                        <MdKeyboardArrowDown />
+                        <MdKeyboardArrowDown
+                            color='var(--light)'
+                        />
                     </div>
                 </div>
                 {expandGame && (

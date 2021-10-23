@@ -16,6 +16,7 @@
   --background-button-calculator: #003A63;
   --background-viewer-index-tipster: var(--white);
   --background-button-mobile: #082A3C;
+  --background-button-dropdown: #012742;
 
   --background-button-login: #003256;
 
@@ -90,6 +91,8 @@
 
   --background-header-secondary: var(--white);
 
+  --background-button-dropdown: rgba(212, 212, 212, 0.3);
+
   --border-button-login: #E8E8E8;
   --btn-login: #2865FF;
 
@@ -123,18 +126,6 @@
 @media (max-width: 1080px){
   html {
     font-size: 89.75%;
-  }
-}
-
-@media (max-width: 720px){
-  html {
-    font-size: 82.5%;
-  }
-}
-
-@media (max-width: 520px){
-  html {
-    font-size: 75.5%;
   }
 }
 

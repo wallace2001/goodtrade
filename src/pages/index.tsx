@@ -37,10 +37,6 @@ export default function Home() {
             </div>
             <div className={styles.banner}>
               <img 
-              style={{
-                width: '42rem',
-                height: '42rem'
-              }}
               className={styles.image} 
               src={!darkMode ?
               '/images/dark/dark_demo.png' :

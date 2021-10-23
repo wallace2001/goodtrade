@@ -75,15 +75,27 @@ export const Main = () => {
                                         {...light.backgroundBoxGameDetailsLight} : 
                                         {...light.backgroundBoxGameDetailsDark}
                                     } className={styles.headerGame}>
-                                        {HEADER_GAME.map((item, idx) => (
+                                        {HEADER_GAME.map((item, idx) => {
+                                            return(
                                             <button key={idx}>
-                                                <p style={{
-                                                    ...light.word
-                                                }} key={item.name}>{item.name}</p>
-                                                {item.name === 'Todos' && <div />}
+                                                {
+                                                    true && (
+                                                        <>
+                                                            <p style={{
+                                                                ...light.word,
+                                                            }} key={item.name}>{item.name}</p>
+                                                            {item.name === 'Todos' && <div />}
+                                                        </>
+                                                    )
+                                                }
                                             </button>
-                                        ))}
-                                        {darkMode ? <img loading="lazy" src="/icons/light/settings_light.svg" /> : <img loading="lazy" src="/icons/dark/settings_dark.svg" />}
+                                        )})}
+                                        <div 
+                                            className={styles.boxDots}
+                                            style={darkMode ? {background: 'transparent'} : {}}
+                                        >
+                                            {darkMode ? <img loading="lazy" src="/icons/light/settings_light.svg" /> : <img loading="lazy" src="/icons/dark/settings_dark.svg" />}
+                                        </div>
                                     </div>
                                     <div style={
                                         darkMode ?

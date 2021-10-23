@@ -1,3 +1,20 @@
+export const TABLEINFO = [
+    {
+        date: '14.11.21 - 16:43',
+        game: 'PSG x Real Madrid / Messi',
+        country: 'França',
+        champion: 'Champions League',
+        category: 'Série A',
+        type: 'FT',
+        market: 'OVER 1,5',
+        odd: '1,66',
+        stake: 'R$ 10',
+        green: 'GREEN',
+        red: 'RED',
+        lucro: 'R$ 6,10',
+    },
+];
+
 export const TOOLS = [
     {
         name: "Bot Betfair",
@@ -188,7 +205,7 @@ export const GAMESLIDEFOODBALL = [
     {
         team: [
             {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-            {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+            {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
         ],
         league: 'Football / England Premier League',
         time: '2nd Half 6.7"',
@@ -197,7 +214,7 @@ export const GAMESLIDEFOODBALL = [
     {
         team: [
             {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-            {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+            {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
         ],
         league: 'Football / England Premier League',
         time: '2nd Half 6.7"',
@@ -206,7 +223,7 @@ export const GAMESLIDEFOODBALL = [
     {
         team: [
             {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-            {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+            {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
         ],
         league: 'Football / England Premier League',
         time: '2nd Half 6.7"',
@@ -215,7 +232,7 @@ export const GAMESLIDEFOODBALL = [
     {
         team: [
             {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-            {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+            {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
         ],
         league: 'Football / England Premier League',
         time: '2nd Half 6.7"',
@@ -233,7 +250,7 @@ export const FOOTBALL = [
                 {
                     team: [
                         {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                        {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: 75,
@@ -242,7 +259,7 @@ export const FOOTBALL = [
                 {
                     team: [
                         {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                        {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: 75,
@@ -251,7 +268,7 @@ export const FOOTBALL = [
                 {
                     team: [
                         {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                        {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: 75,
@@ -260,7 +277,7 @@ export const FOOTBALL = [
                 {
                     team: [
                         {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                        {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: 75,
@@ -269,7 +286,7 @@ export const FOOTBALL = [
                 {
                     team: [
                         {name: 'Chelsea', goals: 3, icon: '/icons/chelsea.svg'},
-                        {name: 'Manchester United', goals: 1, icon: '/icons/manchester.svg'},
+                        {name: 'M.United', goals: 1, icon: '/icons/manchester.svg'},
                     ],
                     league: 'Alemanhã 3ª Liga',
                     time: 75,

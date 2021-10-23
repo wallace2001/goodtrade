@@ -43,7 +43,7 @@
         justify-content: center;
         flex-wrap: wrap;
 
-        div{
+        button{
             width: auto;
             height: auto;
 
@@ -51,6 +51,8 @@
 
             display: flex;
             // justify-content: flex-start;
+            background: transparent;
+            border: none;
             align-items: center;
 
             cursor: pointer;

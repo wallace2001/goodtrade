@@ -1,0 +1,29 @@
+.container{
+    width: 100%;
+    overflow: auto;
+    :global{
+        .ant-table-thead{
+            tr{
+                th{
+                    background: #003256;
+                    color: var(--white);
+                }
+
+                th::before{
+                    background-color: var(--white) !important;
+                }
+            }
+        }
+        .ant-table-tbody > tr {
+            background-color: rgba(0, 88, 151, 0.9);
+            color: var(--white);
+
+            &:hover{
+                background-color: rgba(0, 88, 151, 0.9);
+            }
+        }
+        .ant-table-tbody{
+            background: var(--white);
+        }
+    }
+}

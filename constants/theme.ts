@@ -1,3 +1,5 @@
+
+// Variável de definições de css para o Dark e o Light
 export const light = {
     backgroundImageMobileDark: {
         backgroundImage: 'url(/images/background_mobile.png)',
@@ -75,5 +77,11 @@ export const light = {
     },
     arrowColor: {
         color: 'var(--blue-200)',
+    },
+};
+
+export const StatusGame = {
+    goal: {
+
     },
 };

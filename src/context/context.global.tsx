@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import { changeCategory } from '../store/action/categorie';
@@ -31,7 +32,10 @@ export const GlobalProvider = ({children}: ProviderProps) => {
     const [isOpenLoginAndRegister, setIsOpenLoginAndRegister] = useState<string>('');
 
     const dispatch = useDispatch();
+    const router = useRouter();
+
     const { categorie } = useSelector((state: RootStateOrAny) => state.categoryReducer);
+    const { router: Router } = useSelector((state: RootStateOrAny) => state.routerReducer);
 
     const getTamScroll = () => {
         const $html = document.querySelector('html');
@@ -78,6 +82,10 @@ export const GlobalProvider = ({children}: ProviderProps) => {
     useEffect(() => {
         getTamScroll();
     }, [scroll])
+
+    useEffect(() => {
+        router.push(Router);
+    }, [Router]);
 
     return(
         <GlobalContext.Provider value={{

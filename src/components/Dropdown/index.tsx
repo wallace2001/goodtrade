@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {MdKeyboardArrowUp} from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { ChangeRouter } from '../../store/action/router';
 import styles from './index.module.scss';
 
 interface OptionsProps{
@@ -21,13 +23,23 @@ interface DropdownProps{
     colorArrow: string;
 }
 
+// Dropdown é um component de select
 export const Dropdown = ({ options, valueActualy, type, width, justifyContent, left, colorTitle, colorArrow }: DropdownProps) => {
     const [isOpenOptions, setOpenOptions] = useState<boolean>(false);
     const isTypeEqualFlags = type === 'flags';
 
+    const dispatch = useDispatch();
+
+    // Mudar state para visualização do dropdown
     const handleChangeViewerOptions = () => {
         setOpenOptions(prevState => !prevState);
     };
+
+        // Mudar state para visualização de outras telas
+    const handleClickChangeTool = (value: string) => {
+        dispatch(ChangeRouter(value));
+    }
+
     return (
         <div className={styles.container}>
             <label onClick={handleChangeViewerOptions} >
@@ -50,7 +62,7 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, l
                 }}>
                     {options.map((item, idx) => {
                         return (
-                            <div style={{
+                            <button onClick={() => handleClickChangeTool(item.value)} style={{
                                 justifyContent,
                             }} key={idx}>
                                 {isTypeEqualFlags ? 
@@ -58,7 +70,7 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, l
                                 <img src={`/icons/dark/${item.icon}.svg`} alt="" />
                                 }
                                 <p>{item.name}</p>
-                            </div>
+                            </button>
                         );
                     })}
                 </div>
