@@ -83,7 +83,7 @@ const TableGames = ({item: itemGame}: TableGamesProps) => {
                 !showMore ? {display: 'none'} :
                 {display: 'flex'}
             }>
-                {itemGame.game.map((item, idx) => (
+                {itemGame.game.map((item) => (
                     <BoxGame {...item} type={itemGame.type} />
                 ))}
             </div>

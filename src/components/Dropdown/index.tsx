@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, PropsWithoutRef } from 'react';
 import {MdKeyboardArrowUp} from 'react-icons/md';
 import { useDispatch } from 'react-redux';
+
 import { ChangeRouter } from '../../store/action/router';
 import styles from './index.module.scss';
 
@@ -10,13 +11,16 @@ interface OptionsProps{
     icon: string;
     iconDark?: string;
     iconLight?: string;
+    country_id?: number;
+    country_logo?: string;
+    country_name?: string;
 }
 
 interface DropdownProps{
     valueActualy: string;
-    options: OptionsProps[];
+    options: any[] | OptionsProps[];
     type: string;
-    width: number;
+    width: number | string;
     left?: number;
     justifyContent: string;
     colorTitle: string;
@@ -29,6 +33,7 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, l
     const isTypeEqualFlags = type === 'flags';
 
     const dispatch = useDispatch();
+    const ref = useRef(null) as any;
 
     // Mudar state para visualização do dropdown
     const handleChangeViewerOptions = () => {
@@ -40,8 +45,23 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, l
         dispatch(ChangeRouter(value));
     }
 
+    // Verificar se o usuário clicou fora do dropdown
+    const handleClickOutsideElement = (e: any) => {
+        if (ref.current && !ref.current.contains(e.target)) {
+            setOpenOptions(false);
+          }
+    }
+
+    // Metodo para ficar escutando o click do usuário
+    useEffect(() => {
+        document.addEventListener("click", handleClickOutsideElement, true);
+        return () => {
+          document.removeEventListener("click", handleClickOutsideElement, true);
+        };
+    });
+
     return (
-        <div className={styles.container}>
+        <div ref={ref} className={styles.container}>
             <label onClick={handleChangeViewerOptions} >
                 {isTypeEqualFlags && <img src="/flags/br.svg" alt="" />}
                 <p style={{
@@ -57,7 +77,7 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, l
             </label>
             {isOpenOptions &&             
                 <div className={styles.content} style={{
-                    width: `${width}px`,
+                    width: width === 'auto' ? 'auto' : width,
                     left,
                 }}>
                     {options.map((item, idx) => {
@@ -66,10 +86,10 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, l
                                 justifyContent,
                             }} key={idx}>
                                 {isTypeEqualFlags ? 
-                                <img src={item.icon} alt="" /> :
+                                <img src={item.icon ? item.icon : item.country_logo} alt="" /> :
                                 <img src={`/icons/dark/${item.icon}.svg`} alt="" />
                                 }
-                                <p>{item.name}</p>
+                                <p>{item.name ? item.name : item.country_name}</p>
                             </button>
                         );
                     })}

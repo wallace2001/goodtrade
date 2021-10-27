@@ -9,6 +9,7 @@ import styles from './header.module.scss';
 import { light } from '../../../constants/theme';
 import { BiSearch } from 'react-icons/bi';
 import { Dropdown } from '../Dropdown';
+import { getFetchApis } from '../../context/callaAisPublics';
 
 interface PropsHeader{
     haveBackground: boolean;
@@ -33,6 +34,8 @@ export const Header = ({haveBackground}: PropsHeader) => {
         language,
     } = getContext();
 
+    const { countries } = getFetchApis();
+
     const handleChangeDrawerMobileVisible = () => {
         setIsDrawerMobileVisible(prevState => !prevState);
     };
@@ -55,20 +58,22 @@ export const Header = ({haveBackground}: PropsHeader) => {
                         {...light.word}
                     }>ApostaMelhor</h4>
                     <div style={{
-                        marginLeft: '2rem'
+                        marginLeft: '2rem',
                     }}>
                         <Dropdown
                             valueActualy={language}
-                            options={FLAGS}
+                            options={countries}
                             type='flags'
-                            width={100}
+                            width={'auto'}
                             colorTitle='var(--light_select)'
                             colorArrow='var(--light_select-arrow)'
-                            justifyContent='center'
+                            justifyContent='flex-start'
                         />
                     </div>
                 </div>
-                <div className={styles.right}>
+                <div className={styles.right} style={{
+                    marginRight: '1rem'
+                }}>
 
                         <Dropdown
                             valueActualy={tools}

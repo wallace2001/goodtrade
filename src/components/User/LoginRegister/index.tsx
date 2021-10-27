@@ -25,18 +25,19 @@ export const LoginRegister = () => {
 
     return (
         <div className={styles.container}>
+            <div className={styles.closeButton}>
+                <AiOutlineClose 
+                    size={40} 
+                    color='var(--light)'
+                    style={{
+                        cursor: 'pointer'
+                    }}
+                    onClick={() => 
+                        changeViewerLoginAndRegister('')
+                    }
+                />
+            </div>
             <div className={styles.contentImageBlur}>
-            <AiOutlineClose 
-                size={50} 
-                color='var(--light)'
-                style={{
-                    padding: '1rem 0 0 1rem',
-                    cursor: 'pointer'
-                }}
-                onClick={() => 
-                    changeViewerLoginAndRegister('')
-                }
-            />
             <div className={styles.content} style={
                 isLogin
                 ? {flexDirection: 'row-reverse'}
@@ -54,7 +55,16 @@ export const LoginRegister = () => {
                     <img src={!darkMode ?
                     '/images/dark/image_login_dark.png' :
                     '/images/light/image_login_light.png'
-                    } />
+                    }
+                    style={
+                        isLogin ? 
+                        { 
+                            transform: 'rotateY(180deg)',
+                        } : {
+                            transform: 'rotate(0deg)'
+                        }
+                    }
+                    />
                 </div>
             </div>
             </div>

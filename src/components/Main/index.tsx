@@ -6,6 +6,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { BEST_TIPSTER, COUNTRIES, GAMESLIDEFOODBALL, HEADERS, HEADER_GAME, MY_LEAGUES } from '../../../constants/constants';
 import { light } from '../../../constants/theme';
 import { getContext } from '../../context/context.global';
+import { DrawerCustom } from '../Drawer';
 import { Box } from './Box';
 import { GameScrollList } from './GameScrollList';
 import styles from './index.module.scss';
@@ -16,6 +17,7 @@ export const Main = () => {
     const {
         categorie,
         darkMode,
+        viewerModalGame,
     } = getContext();
 
     return (
@@ -30,7 +32,14 @@ export const Main = () => {
             } className={styles.content}>
                 <div className={styles.contentBlur}>
                     <div className={styles.box}>
-                        <div className={styles.left}>
+                        <div
+                            className={styles.left}
+                            style={
+                                viewerModalGame ?
+                                {display: 'none'} :
+                                {}
+                            }
+                        >
                             <Box
                                 title="Minhas Ligas"
                                 icon='/icons/myliga.svg'
@@ -67,7 +76,11 @@ export const Main = () => {
                                 more={true}
                             />
                         </div>
-                        <div className={styles.right}>
+                        <div className={styles.right} style={
+                            viewerModalGame ?
+                            {flex: 1} :
+                            {}
+                        }>
                             <header>
                                 <div className={styles.header}>
                                     <div style={
@@ -159,6 +172,15 @@ export const Main = () => {
                                     ))}
                                 </div>
                             </main>
+                        </div>
+                        <div style={
+                            viewerModalGame ? 
+                            {display: 'flex', flex: 1} :
+                            {display: 'none'}
+                        }>
+                            <DrawerCustom
+                                visibility={viewerModalGame}
+                            />
                         </div>
                     </div>
                     <footer>

@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { BiBaseball } from 'react-icons/bi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { GiSpikedBat } from 'react-icons/gi';
+
+import { DrawerCustom } from '../../Drawer';
 import { BUTTONS_GAME } from '../../../../constants/constants';
 import { getContext } from '../../../context/context.global';
 import { MaskTime } from '../../../utils/mask';
@@ -23,9 +25,11 @@ export const BoxGame = ({team, league, time, live, type}: BoxGameProps) => {
 
     const {
         darkMode,
+        changeViewerModalGame,
     } = getContext();
 
     const seconds = time as number;
+    //typeGame verifica se o tipo escolhido ou é futebol ou basket
     const typeGame = type === 'futbol' || type === 'basket';
     const isBaseball = type === 'basebol';
     if (!isNaN(seconds)){
@@ -38,7 +42,7 @@ export const BoxGame = ({team, league, time, live, type}: BoxGameProps) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.game}>
+            <div onClick={changeViewerModalGame} className={styles.game}>
                 <div className={styles.wrapper}>
                     <img loading="lazy" className={styles.star} style={{
                         width: '20px',
@@ -115,7 +119,7 @@ export const BoxGame = ({team, league, time, live, type}: BoxGameProps) => {
                                 )}
                                 {!typeGame &&                            
                                     <div style={{
-                                        flex: 1,
+                                        
                                     }} className={styles.results}>
                                         <div>
                                             {team[0].score.map((num, idx) => (
