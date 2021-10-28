@@ -59,7 +59,6 @@ const TableGames = ({item: itemGame}: TableGamesProps) => {
                 <a>Jogos ao vivo</a>
 
                 <div></div>
-                <div></div>
 
                 <label>
                     {showMore ? (

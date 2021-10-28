@@ -27,6 +27,7 @@
         a{
             color: var(--blue-100);
             transition: color 1s;
+            flex: 2;
 
             &:hover{
                 color: var(--blue-140);
@@ -36,6 +37,7 @@
         div{
             display: flex;
             align-items: center;
+            flex: 2;
 
             img{
                 width: 30px;
