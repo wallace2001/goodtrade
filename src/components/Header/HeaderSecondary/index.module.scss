@@ -3,7 +3,7 @@
     height: 70px;
     display: flex;
     align-items: center;
-    padding: 0 3.93rem;
+    padding: 0 20px;
 
     @media (max-width: 920px){
         padding: 0 10px;
@@ -36,12 +36,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0;
             .box{
                 height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 flex-direction: row;
+
+                padding: 0.5rem;
     
                 cursor: pointer;
     
@@ -59,9 +62,11 @@
                 }
     
                 &:hover{
-                    img{
-                        transform: scale(1.1);
-                    }
+                    transform: scale(1.04);
+                    -webkit-box-shadow: 1px 12px 24px -5px rgba(0,0,0,0.61); 
+                    box-shadow: 1px 12px 24px -5px rgba(0,0,0,0.61);
+
+                    border-radius: 10px;
                 }
     
                 & + div{
@@ -83,6 +88,15 @@
     
                 cursor: pointer;
             }
+        }
+
+        .contentRight{
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-left: 4rem;
         }
     }
 

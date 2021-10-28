@@ -8,6 +8,8 @@ import { DrawerMobile } from './DrawerMobile';
 import styles from './header.module.scss';
 import { light } from '../../../constants/theme';
 import { BiSearch } from 'react-icons/bi';
+import { Dropdown } from '../Dropdown';
+import { getFetchApis } from '../../context/callaAisPublics';
 
 interface PropsHeader{
     haveBackground: boolean;
@@ -22,6 +24,7 @@ export const Header = ({haveBackground}: PropsHeader) => {
         darkMode,
         changeTools,
         changeDarkmode,
+        changeViewerLoginAndRegister,
      } = getContext();
 
     const isEcramBigger80 = scroll >= 80;
@@ -30,6 +33,8 @@ export const Header = ({haveBackground}: PropsHeader) => {
         changeLanguage,
         language,
     } = getContext();
+
+    const { countries } = getFetchApis();
 
     const handleChangeDrawerMobileVisible = () => {
         setIsDrawerMobileVisible(prevState => !prevState);
@@ -52,65 +57,42 @@ export const Header = ({haveBackground}: PropsHeader) => {
                         {...light.wordRevert} :
                         {...light.word}
                     }>ApostaMelhor</h4>
-                    <Select
-                        style={{
-                            marginLeft: '1rem',
-                            ...light.word
-                        }}
-                        dropdownStyle={{
-                            backgroundColor: 'rgba(255,255,255,.5)',
-                        }}
-                        value={language}
-                        onChange={changeLanguage}
-                    >
-                        {FLAGS.map((item, index) => {
-                            return (
-                                <Select.Option style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                    }}
-                                    value={item.value} 
-                                    key={index}
-                                >
-                                    <img
-                                        loading="lazy"
-                                        style={{
-                                            marginRight: '0.5rem'
-                                        }}
-                                        src={`${item.icon}${item.value}.svg`} />
-                                    {item.name}
-                                </Select.Option>
-                            );
-                        })}
-                    </Select>
+                    <div style={{
+                        marginLeft: '2rem',
+                    }}>
+                        <Dropdown
+                            valueActualy={language}
+                            options={countries}
+                            type='flags'
+                            width={'auto'}
+                            colorTitle='var(--light_select)'
+                            colorArrow='var(--light_select-arrow)'
+                            justifyContent='flex-start'
+                        />
+                    </div>
                 </div>
-                <div className={styles.right}>
-                    <Select
-                        defaultValue={tools}
-                        onChange={changeTools}
-                        style={{
-                            ...light.word,
-                        }}
-                        dropdownStyle={{
-                            backgroundColor: 'rgba(255,255,255,.7)',
-                        }}
-                    >
-                        {TOOLS.map(item => (
-                            <Select.Option
-                                key={item.value}
-                                value={item.value}
-                            >
-                                {item.name}
-                            </Select.Option>
-                        ))}
-                    </Select>
+                <div className={styles.right} style={{
+                    marginRight: '1rem'
+                }}>
+
+                        <Dropdown
+                            valueActualy={tools}
+                            options={TOOLS}
+                            type='tools'
+                            width={300}
+                            colorTitle='var(--light_select)'
+                            colorArrow='var(--light_select-arrow)'
+                            justifyContent='flex-start'
+                        />
                     <button
                         style={
                             isEcramBigger80 ?
                             {...light.buttonLoginEcramBigger} :
                             {...light.buttonLogin}
                         }
-                        disabled={true}
+                        onClick={() => 
+                            changeViewerLoginAndRegister('Login')
+                        }
                     >Entrar</button>
                     <button
                         style={
@@ -118,7 +100,10 @@ export const Header = ({haveBackground}: PropsHeader) => {
                             {...light.buttonCreateEcramBigger} :
                             {...light.buttonCreate}
                         }
-                    >Login</button>
+                        onClick={() => 
+                            changeViewerLoginAndRegister('Register')
+                        }
+                    >Cadastrar</button>
                 </div>
             </div>
             <div className={styles.contentMobile}>

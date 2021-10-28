@@ -1,6 +1,6 @@
 import React from 'react';
 import { Progress } from 'antd';
-import { FilteredNames } from '../../utils/Filter';
+import { FilteredNames } from '../../../utils/Filter';
 import styles from './index.module.scss';
 import { light } from '../../../../constants/theme';
 import { getContext } from '../../../context/context.global';

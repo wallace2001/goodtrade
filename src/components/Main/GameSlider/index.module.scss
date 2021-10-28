@@ -2,13 +2,45 @@
     width: 100%;
     height: 100%;
 
+    .content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        padding: 0 6px;
+
+        @media (max-width: 1009px){
+            display: none;
+        }
+    }
+
+    .contentMobile{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .carousel{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0;
+        }
+
+        @media (min-width: 1009px){
+            display: none;
+        }
+    }
+
     .box{
         width: 100%;
-        max-width: 270.70px;
+        max-width: 237.55px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         padding: 1rem;
 
@@ -20,20 +52,28 @@
             margin-left: 1rem;
         }
 
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:hover{
+            transform: scale(1.01);
+            -webkit-box-shadow: 1px 12px 24px -5px rgba(0,0,0,0.61); 
+            box-shadow: 1px 12px 24px -5px rgba(0,0,0,0.61);
+        }
+
         .inLive{
-            width: 3rem;
-            height: 2rem;
+            width: 48.73px;
+            height: 25px;
             padding: 0 1rem;
 
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
+            border-radius: 5px;
 
             background-color: var(--red-1000);
 
             p{
-                margin-top: 0.8rem;
+                margin-top: 0.9rem;
             }
         }
 
@@ -44,7 +84,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 2rem;
+            margin-top: 1.3rem;
 
             div{
                 width: 80px;
@@ -59,8 +99,8 @@
                 background: rgba(12, 78, 126, 0.4);
 
                 img{
-                    width: 85%;
-                    height: 85%;
+                    width: 64.11px;
+                    height: 64.11px;
                     object-fit: contain;
                 }
             }
@@ -77,6 +117,7 @@
             flex-direction: column;
 
             strong{
+                font-weight: 600;
                 margin-top: 1rem;
                 color: var(--white);
             }

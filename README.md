@@ -24,6 +24,8 @@ Pasta public está armazenando todas as imagens que o site está a utilizar.
 # Pasta src
 Pasta src está a guardar praticamente 100% do site, onde se localiza as páginas, os components, utils, context e muitas outras.
 
+# Pasta service
+Pasta service será onde vai ficar as configurações para a integração da API
 # Depedências utilizadas
 - [x] [Ant Design](https://ant.design/)
 - [x] [react-router-dom](https://reacttraining.com/react-router/)

@@ -4,38 +4,43 @@ import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import { BUTTONS_GAME } from '../../../../constants/constants';
 import { light } from '../../../../constants/theme';
 import { getContext } from '../../../context/context.global';
-import { FilteredNames } from '../../utils/Filter';
+import { FilteredNames } from '../../../utils/Filter';
+import { MaskTime } from '../../../utils/mask';
+import { BoxGame } from '../BoxGame';
 import styles from './index.module.scss';
 
-interface TableGamesProps{
-    item: {
-        id: string;
-        title: string;
-        icon: string;
-        game: {
-            team: {
-                name: string; goals: number; icon: string;
-            }[];
-            league: string;
-            time: number | string;
-            live: boolean;
+interface GamesProps{
+    id: string;
+    title: string;
+    icon: string;
+    type: string;
+    game: {
+        team: {
+            name: string; goals?: number; score: number[] | string[]; icon: string;
         }[];
-    } | null;
+        league: string;
+        time: number | string;
+        live: boolean;
+    }[];
 }
 
-const TableGames = ({item}: TableGamesProps) => {
+interface TableGamesProps{
+    item: GamesProps | null;
+}
+
+const TableGames = ({item: itemGame}: TableGamesProps) => {
     const [showMore, setShowMore] = useState<boolean>(false);
-    const title = FilteredNames({title: item?.title});
+    const title = FilteredNames({title: itemGame?.title});
 
     const {
-        darkMode,
+        categorie
     } = getContext();
 
     const handleChangeShowMore = () => {
         setShowMore(prevState => !prevState);
     };
 
-    if (item === null){
+    if (itemGame === null){
         return null;
     }
 
@@ -43,7 +48,7 @@ const TableGames = ({item}: TableGamesProps) => {
         <div className={styles.container}>
             <button onClick={handleChangeShowMore}>
                 <div>
-                    <img loading="lazy" src={item.icon} />
+                    <img loading="lazy" src={itemGame.icon} />
                     <p style={{
                         ...light.word
                     }}>{title && title[0]} <strong style={{
@@ -51,7 +56,7 @@ const TableGames = ({item}: TableGamesProps) => {
                     }}>{title && title[1]}</strong></p>
                 </div>
 
-                <a>Classificações ao vivo</a>
+                <a>Jogos ao vivo</a>
 
                 <div></div>
                 <div></div>
@@ -78,62 +83,8 @@ const TableGames = ({item}: TableGamesProps) => {
                 !showMore ? {display: 'none'} :
                 {display: 'flex'}
             }>
-                {item.game.map((item, idx) => (
-                    <div key={idx} className={styles.game}>
-                        <img loading="lazy" className={styles.star} style={{
-                            width: '20px',
-                            height: '20px'
-                        }} src={darkMode ? "/icons/light/star.svg" : "/icons/dark/star.svg"} />
-                        <div className={styles.live}>
-                            <p>Live</p>
-                        </div>
-                        <div className={styles.gameNamesTeams}>
-                            <div>
-                                <p style={{
-                                    marginRight: '0.3rem',
-                                    color: 'var(--light-100)',
-                                }}>{item.team[0]?.name}</p>
-                                <img loading="lazy" src={item.team[0]?.icon} alt="" />
-                            </div>
-                            <div className={styles.status}>
-                                <p>{item.team[0]?.goals}</p>
-                                <p style={{
-                                    margin: '0 0.5rem',
-                                    marginBottom: '0.5rem'
-                                }}> - </p>
-                                <p>{item.team[1]?.goals}</p>
-                            </div>
-                            <div>
-                                <img loading="lazy" src={item.team[1]?.icon} alt="" />
-                                <p  style={{
-                                    marginLeft: '0.3rem',
-                                    color: 'var(--light-100)',
-                                }}>{item.team[1]?.name}</p>
-                            </div>
-                            <Progress
-                                type="circle"
-                                strokeColor={ item.time <= 50 ? {
-                                    '100%': 'var(--yellow-300)',
-                                } : {
-                                    '100%': 'var(--green-100)'
-                                }}
-                                style={{
-                                    marginLeft: '1rem',
-                                    zIndex: 0,
-                                }}
-                                width={40}
-                                percent={50}
-                                format={percent => `${percent}"`}
-                            />
-                        </div>
-                            <div className={styles.buttonsGame}>
-                                {BUTTONS_GAME.map(item => (
-                                    <label key={item.id}>
-                                        <img src={item.icon} />
-                                    </label>
-                                ))}
-                            </div>
-                    </div>
+                {itemGame.game.map((item) => (
+                    <BoxGame {...item} type={itemGame.type} />
                 ))}
             </div>
         </div>

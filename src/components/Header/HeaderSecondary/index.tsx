@@ -1,11 +1,10 @@
 import React from 'react';
-import { Select } from 'antd';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
-import { HEADERS, SECONDARY_HEADER_MOBILE } from '../../../../constants/constants';
+import { HEADERS, OTHERS, SECONDARY_HEADER_MOBILE } from '../../../../constants/constants';
 import styles from './index.module.scss';
 import { getContext } from '../../../context/context.global';
-import { light } from '../../../../constants/theme';
+import { Dropdown } from '../../Dropdown';
 
 export const HeaderSecondary = () => {
 
@@ -30,49 +29,45 @@ export const HeaderSecondary = () => {
                         </div>
                     ))}
                 </div>
-                <Select
-                    value="Outros"
-                    onChange={() => {}}
-                    dropdownStyle={{
-                        backgroundColor: 'rgba(255,255,255,.7)',
-                    }}
-                    style={{
-                        marginRight: '1rem',
-                        marginLeft: '4rem',
-                        ...light.word,
-                    }}
-                >
-                    {HEADERS.map(item => (
-                        <Select.Option
-                            key={item.name}
-                            value={item.name}
-                        >
-                            {item.name}
-                        </Select.Option>
-                    ))}
-                </Select>
-                <div className={styles.options}>
-                    <BiSearchAlt2
-                        size={25}
-                        cursor="pointer"
-                        color="var(--button-color-gear)" />
-                    <img
-                        loading="lazy"
-                        style={{margin: '0 1rem'}}
-                        src={darkMode ? "/icons/light/gear.svg" : "/icons/dark/gear.svg"}
-                        alt="Options"
-                    />
-                    <img
-                        loading="lazy"
-                        style={{width: '21px', height: '21px'}}
-                        src={darkMode ? "/icons/light/dark.svg" : "/icons/dark/light.svg"}
-                        onClick={changeDarkmode}
-                    />
-                    <img
-                        loading="lazy"
-                        style={{width: '22px', marginLeft: '1rem', height: '22px'}}
-                        src={darkMode ? "/icons/light/sound_mude_light.svg" : "/icons/dark/sound_mude_dark.svg"}
-                    />
+                <div className={styles.contentRight}>
+                    <div style={{
+                        marginRight: '1rem'
+                    }}>
+                        <Dropdown
+                            valueActualy='outros'
+                            options={OTHERS}
+                            type='tools'
+                            width={750}
+                            right={0}
+                            colorTitle='var(--light)'
+                            colorArrow='var(--light)'
+                            justifyContent='flex-start'
+                            widthContent='auto'
+                        />
+                    </div>
+                    <div className={styles.options}>
+                        <BiSearchAlt2
+                            size={25}
+                            cursor="pointer"
+                            color="var(--button-color-gear)" />
+                        <img
+                            loading="lazy"
+                            style={{margin: '0 1rem'}}
+                            src={darkMode ? "/icons/light/gear.svg" : "/icons/dark/gear.svg"}
+                            alt="Options"
+                        />
+                        <img
+                            loading="lazy"
+                            style={{width: '21px', height: '21px'}}
+                            src={darkMode ? "/icons/light/dark.svg" : "/icons/dark/light.svg"}
+                            onClick={changeDarkmode}
+                        />
+                        <img
+                            loading="lazy"
+                            style={{width: '22px', marginLeft: '1rem', height: '22px', marginRight: '7px'}}
+                            src={darkMode ? "/icons/light/sound_mude_light.svg" : "/icons/dark/sound_mude_dark.svg"}
+                        />
+                    </div>
                 </div>
             </div>
             <div className={styles.contentMobile}>

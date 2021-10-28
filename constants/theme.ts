@@ -1,3 +1,5 @@
+
+// Variável de definições de css para o Dark e o Light
 export const light = {
     backgroundImageMobileDark: {
         backgroundImage: 'url(/images/background_mobile.png)',
@@ -9,7 +11,7 @@ export const light = {
         backgroundImage: 'url(/images/background_dark.png)',
     },
     backgroundImageLight: {
-        backgroundImage: 'url(/images/background_light.png)',
+        backgroundImage: 'url(/images/background_light.jpg)',
     },
     backgroundBoxHomeLight: {
         background: 'linear-gradient(130.33deg, rgba(255, 255, 255, 1) -2.68%, rgba(255, 255, 255, 0.1) 101.41%)',
@@ -38,6 +40,13 @@ export const light = {
     },
     imageBackgroundTitleGameLight: {
         background: 'linear-gradient(90deg, #2865FF 50.13%, rgba(255, 255, 255, 0) 99.51%)',
+    },
+    backgroundMainDark: {
+        background: 'linear-gradient(128.85deg, rgba(1, 68, 116, .65) 0%, rgba(1, 68, 116, .95) 100.88%)',
+        filter: 'blur(50)',
+    },
+    backgroundMainLight: {
+        background: 'transparent',
     },
     buttonLoginEcramBigger: {
         background: '#003A63',
@@ -68,5 +77,11 @@ export const light = {
     },
     arrowColor: {
         color: 'var(--blue-200)',
+    },
+};
+
+export const StatusGame = {
+    goal: {
+
     },
 };
