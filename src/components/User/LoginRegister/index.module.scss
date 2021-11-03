@@ -10,10 +10,13 @@
 }
 
 .container{
-    width: 100%;
+    width: 90%;
+    max-height: 90vh;
     height: auto;
-    position: sticky;
+    position: fixed;
     top: 30px;
+
+    z-index: 9999;
 
     background: rgb(11,172,198);
     background: linear-gradient(180deg, rgba(11,172,198,1) 0%, rgba(49,93,167,1) 58%);
@@ -53,8 +56,8 @@
                 position: relative;
                 img{
                     width: 100%;
-                    height: 100%;
-                    object-fit: contain;
+                    max-height: 90vh;
+                    object-fit: cover;
                 }
             }
 

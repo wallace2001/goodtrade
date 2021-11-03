@@ -26,6 +26,8 @@ interface ProviderProps{
 export const GlobalContext = createContext({} as ContextProps);
 
 export const GlobalProvider = ({children}: ProviderProps) => {
+
+    // Estados
     const [tools, setTools] = useState<string>('Ferramentas');
     const [scroll, setTamScroll] = useState<number>(0);
     const [language, setLanguage] = useState<string>('br');
@@ -34,9 +36,13 @@ export const GlobalProvider = ({children}: ProviderProps) => {
     const [isBigger80, setIsBigger80] = useState<boolean>(false);
     const [isOpenLoginAndRegister, setIsOpenLoginAndRegister] = useState<string>('');
 
+    // Importando o dispatch para pode despachar eventos
     const dispatch = useDispatch();
+
+    // Importando router para poder mudar de página ou outras funcionalidades
     const router = useRouter();
 
+    // Buscando informações dos estados do redux
     const { categorie } = useSelector((state: RootStateOrAny) => state.categoryReducer);
     const { router: Router } = useSelector((state: RootStateOrAny) => state.routerReducer);
 
@@ -89,14 +95,17 @@ export const GlobalProvider = ({children}: ProviderProps) => {
         setViewerModalGame(prevState => !prevState);
     }
     
+    // Monitora sempre que a rolagem é acionada
     useEffect(() => {
         window.onscroll = () => setTamScroll(document.documentElement.scrollTop);
     }, []);
 
+    // De acordo com a rolagem, mudar o valor de tamScroll
     useEffect(() => {
         getTamScroll();
     }, [scroll])
 
+    // Monitora quando o router muda, para fazer a rota certa
     useEffect(() => {
         router.push(Router);
     }, [Router]);

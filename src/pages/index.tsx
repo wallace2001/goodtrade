@@ -10,11 +10,13 @@ import { LoginRegister } from '../components/User/LoginRegister'
 
 export default function Home() {
 
+  // Buscando estados do contexto
   const {
     darkMode,
     isOpenLoginAndRegister,
   } = getContext();
 
+  // Váriavel que verifica se o estado do login está em aberto
   const isVisibleLoginAndRegister = isOpenLoginAndRegister !== '';
 
   return (

@@ -20,6 +20,7 @@ interface PropsGameScroll{
     }[];
 }
 
+// GameScrollList é onde vai ficar os jogos que ao vivo
 export const GameScrollList = ({ title: titleNo, item }: PropsGameScroll) => {
     const title = FilteredNames({title: titleNo});
 

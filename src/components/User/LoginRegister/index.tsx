@@ -15,12 +15,14 @@ type FormData = {
 
 export const LoginRegister = () => {
 
+    // Buscando valores e funções do contextAPI
     const {
         darkMode,
         isOpenLoginAndRegister,
         changeViewerLoginAndRegister
     } = getContext();
 
+    // Verificando e guardando se é o login que está aberto atualmente
     const isLogin = isOpenLoginAndRegister === 'Login';
 
     return (

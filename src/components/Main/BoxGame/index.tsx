@@ -20,9 +20,11 @@ interface BoxGameProps{
     live: boolean;
 }
 
+// BoxGame é o component onde vai ficar a box dos jogos
 export const BoxGame = ({team, league, time, live, type}: BoxGameProps) => {
     const [expandGame, setEpandGame] = useState<boolean>(false);
 
+    // Buscando funções e estados do contextAPI
     const {
         darkMode,
         changeViewerModalGame,
@@ -31,6 +33,7 @@ export const BoxGame = ({team, league, time, live, type}: BoxGameProps) => {
     const seconds = time as number;
     //typeGame verifica se o tipo escolhido ou é futebol ou basket
     const typeGame = type === 'futbol' || type === 'basket';
+    // isBaseball verifica se o tipo selecionado é basebol
     const isBaseball = type === 'basebol';
     if (!isNaN(seconds)){
         MaskTime(seconds)

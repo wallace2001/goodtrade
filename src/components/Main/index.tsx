@@ -14,6 +14,7 @@ import TableGames from './TableGames';
 
 export const Main = () => {
 
+    // Buscando valores da contextAPI
     const {
         categorie,
         darkMode,
@@ -32,6 +33,7 @@ export const Main = () => {
             } className={styles.content}>
                 <div className={styles.contentBlur}>
                     <div className={styles.box}>
+                        {/* Todos os elementos que ficam do lado esquerdo depois do segundo Header */}
                         <div
                             className={styles.left}
                             style={
@@ -76,11 +78,13 @@ export const Main = () => {
                                 more={true}
                             />
                         </div>
+                        {/* Todos os elementos que ficam do lado direito depois do segundo Header */}
                         <div className={styles.right} style={
                             viewerModalGame ?
                             {flex: 1} :
                             {}
                         }>
+                            {/* Filtro de opções */}
                             <header>
                                 <div className={styles.header}>
                                     <div style={
@@ -134,6 +138,7 @@ export const Main = () => {
                                     <div></div>
                                 </div>
                             </header>
+                            {/* Onde ficam as partidas */}
                             <main style={
                                     darkMode ? 
                                     {...light.backgroundBoxGameDetailsLight} : 
@@ -173,6 +178,7 @@ export const Main = () => {
                                 </div>
                             </main>
                         </div>
+                        {/* Aqui vai ser a parte do drawer que vai abrir pela direita */}
                         <div style={
                             viewerModalGame ? 
                             {display: 'flex', flex: 1} :
@@ -191,6 +197,7 @@ export const Main = () => {
                     </footer>
                 </div>
             </div>
+            {/* A partir daqui começa o footer */}
             <footer
                 style={{
                     backgroundColor: 'var(--background-footer-1)'

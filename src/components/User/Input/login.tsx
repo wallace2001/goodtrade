@@ -31,13 +31,17 @@ export const Socials = () => {
     );
 }
 
+
+// Esse é o formulário de login
 export const LoginForm = () => {
 
+    // Aqui é verifcado quais campos são obrigatorios e enviar uma mensagem e outros filtros
     const validationSchema = yup.object().shape({
         name: yup.string().required('Nome obrigatorio'),
         password: yup.string().required('Senha obrigatoria').min(6).max(10),
     });
 
+    // Pegando funções e valores do formulário
     const {
         values,
         errors,
@@ -146,8 +150,10 @@ export const LoginForm = () => {
     )
 }
 
+// Esse é o formulario do registro
 export const RegisterForm = () => {
 
+    // Aqui é verifcado quais campos são obrigatorios e enviar uma mensagem e outros filtros
     const validationSchema = yup.object().shape({
         name: yup.string().required('Nome obrigatorio').min(3),
         email: yup.string().required('Email obrigatoria').email(),
@@ -156,6 +162,7 @@ export const RegisterForm = () => {
         code: yup.string(),
     });
 
+    // Pegando funções e valores do formulário
     const {
         values,
         errors,

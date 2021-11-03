@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, PropsWithoutRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {MdKeyboardArrowUp} from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 
@@ -19,17 +19,34 @@ interface OptionsProps{
 interface DropdownProps{
     valueActualy: string;
     options: any[] | OptionsProps[];
-    type: string;
+    type?: string;
     width: number | string;
+    iconExists?: boolean; 
+    showArrow?: boolean;
     right?: number;
-    justifyContent: string;
+    justifyContent?: string;
     colorTitle: string;
     colorArrow: string;
     widthContent?: string;
+    top?: number;
+    left?: number;
 }
 
 // Dropdown é um component de select
-export const Dropdown = ({ options, valueActualy, type, width, justifyContent, right, colorTitle, colorArrow, widthContent }: DropdownProps) => {
+export const Dropdown = ({ 
+    options,
+    showArrow,
+    iconExists,
+    valueActualy,
+    type,
+    width,
+    justifyContent,
+    right,
+    colorTitle,
+    colorArrow,
+    widthContent,
+    ...rest
+}: DropdownProps) => {
     const [isOpenOptions, setOpenOptions] = useState<boolean>(false);
     const isTypeEqualFlags = type === 'flags';
 
@@ -68,18 +85,21 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, r
                 <p style={{
                     color: colorTitle,
                 }}>{valueActualy}</p>
-                <MdKeyboardArrowUp 
-                    size={25} 
-                    color={colorArrow}
-                    style={{
-                        marginTop: '0.15rem'
-                    }}
-                />
+                {showArrow && (
+                    <MdKeyboardArrowUp 
+                        size={25} 
+                        color={colorArrow}
+                        style={{
+                            marginTop: '0.15rem'
+                        }}
+                    />
+                )}
             </label>
             {isOpenOptions &&             
                 <div className={styles.content} style={{
                     width: width === 'auto' ? 'auto' : width,
                     right,
+                    ...rest
                 }}>
                     {options.map((item, idx) => {
                         return (
@@ -88,11 +108,12 @@ export const Dropdown = ({ options, valueActualy, type, width, justifyContent, r
                                 width: widthContent === 'auto' ? widthContent : '100%',
                                 marginLeft: 0,
                             }} key={idx}>
-                                {isTypeEqualFlags ? 
-                                <img src={item.icon ? item.icon : item.country_logo} alt="" /> :
-                                <img src={`/icons/dark/${item.icon}.svg`} alt="" />
-                                }
-                                <p>{item.name ? item.name : item.country_name}</p>
+                                {iconExists && (
+                                    isTypeEqualFlags ? 
+                                    <img src={item.icon ? item.icon : item.country_logo} alt="" /> :
+                                    <img src={`/icons/dark/${item.icon}.svg`} alt="" />
+                                )}
+                                <a>{item.name ? item.name : item.country_name}</a>
                             </button>
                         );
                     })}

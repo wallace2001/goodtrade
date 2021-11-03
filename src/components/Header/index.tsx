@@ -61,6 +61,8 @@ export const Header = ({haveBackground}: PropsHeader) => {
                         marginLeft: '2rem',
                     }}>
                         <Dropdown
+                            showArrow={true}
+                            iconExists={true}
                             valueActualy={language}
                             options={countries}
                             type='flags'
@@ -76,6 +78,8 @@ export const Header = ({haveBackground}: PropsHeader) => {
                 }}>
 
                         <Dropdown
+                            showArrow={true}
+                            iconExists={true}
                             valueActualy={tools}
                             options={TOOLS}
                             type='tools'

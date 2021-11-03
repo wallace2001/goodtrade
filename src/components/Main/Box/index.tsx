@@ -19,9 +19,12 @@ interface PropsBox{
     more: boolean; 
 }
 
+// Box são as box que vão ficar do lado esquerdo do main depois do segundo header
 export const Box = ({ icon, title, item, button, more }: PropsBox) => {
+    // Está separando a string pelo espaçamento
     const titleFiltered = title.split(' ');
 
+    // Buscando o estado de darkmode do contextAPI
     const {
         darkMode,
     } = getContext();

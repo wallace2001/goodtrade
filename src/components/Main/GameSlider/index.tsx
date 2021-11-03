@@ -18,12 +18,15 @@ interface PropsGameScroll{
   }[];
 }
 
+// GameSlider é a parte dos jogos de partidas ao vivo, onde no mobile ele vai deslizar para o lado
 export const GameSlider = ({item}: PropsGameScroll) => {
 
+  // Buscando estados do contextAPI
   const {
     darkMode,
   } = getContext();
 
+  // Breakpoints dependendo do tamanho da tela do usuário, ele vai diminuindo a quantidade de jogos ao vivo que aparece na tela
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },

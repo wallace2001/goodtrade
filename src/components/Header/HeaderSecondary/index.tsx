@@ -34,6 +34,8 @@ export const HeaderSecondary = () => {
                         marginRight: '1rem'
                     }}>
                         <Dropdown
+                            iconExists={true}
+                            showArrow={true}
                             valueActualy='outros'
                             options={OTHERS}
                             type='tools'

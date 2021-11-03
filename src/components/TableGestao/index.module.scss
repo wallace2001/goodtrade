@@ -1,12 +1,36 @@
-.container{
-    width: 100%;
-    overflow: auto;
-    :global{
-        .ant-table-thead{
+:global(.dark-mode){
+    .container{
+        // Estilizando o header da tabela
+        table:hover,
+        tr:hover,
+        thead:hover {
+            background: #2865ff21 !important;
+        }
+
+        .colorTableImpar{
+            :global(.ant-table-tbody){
+                tr{
+                    background-color: #fff;
+                    color: var(--white);
+
+                    td{
+                        color: var(--light);
+                    }
+                }
+            }
+        }
+        .ant-table-tbody > tr.ant-table-row:hover > td {
+            background: none !important;
+        }
+        :global(.ant-table-thead){
             tr{
                 th{
-                    background: #003256;
+                    background: #2865FF !important;
                     color: var(--white);
+                }
+
+                th:hover{
+                    background-color: none;
                 }
 
                 th::before{
@@ -14,16 +38,140 @@
                 }
             }
         }
-        .ant-table-tbody > tr {
-            background-color: rgba(0, 88, 151, 0.9);
-            color: var(--white);
+    
+        // Estilizando os botões de paginação
+        :global(.ant-pagination){
+            button{
+                background-color: #fff !important;
+                border: 1px solid #C8C8C8;
+                border-radius: 4px;
 
-            &:hover{
-                background-color: rgba(0, 88, 151, 0.9);
+                span{
+                    color: #B0B0B0;
+                }
+    
+                &:hover{
+                    border: 1px solid #2865FF;
+                }
+            }
+    
+            :global(.ant-pagination-item-active){
+                background-color: #2865FF;
+                a{
+                    color: var(--white);
+                }
+            }
+    
+            li{
+                background-color: #E3E3E3;
+                border: none;
+                border-radius: 6px;
+    
+                a{
+                    color: #A6A6A6;
+                    font-weight: 500;
+                }
+    
+                &:hover{
+                    background-color: #2865FF;
+                }
             }
         }
-        .ant-table-tbody{
-            background: var(--white);
+    }
+    
+}
+
+.container{
+    width: 100%;
+    overflow: auto;
+
+    .colorTablePar{
+        :global(.ant-table-tbody){
+            tr{
+                background-color: #005897;
+                color: var(--white);
+            }
+        }
+    }
+    .colorTableImpar{
+        :global(.ant-table-tbody){
+            tr{
+                background-color: #00487B;
+                color: var(--white);
+
+                tr:hover{
+                    background-color: none;
+                }
+
+                tr::before{
+                    background-color: var(--white) !important;
+                }
+            }
+        }
+    }
+    :global{
+        // Estilizando o header da tabela
+        table:hover,
+        tr:hover,
+        thead:hover {
+            background: #005897 !important;
+            cursor: pointer;
+        }
+    
+        .ant-table-tbody > tr.ant-table-row:hover > td {
+            background: none !important;
+        }
+        .ant-table-thead{
+            tr{
+                th{
+                    background: #003256;
+                    color: var(--white);
+                }
+
+                th:hover{
+                    background-color: none;
+                }
+
+                th::before{
+                    background-color: var(--white) !important;
+                }
+            }
+        }
+
+        // Estilizando os botões de paginação
+        .ant-pagination{
+            button{
+                background-color: #00487B !important;
+                border: 1px solid #0064AC;
+                border-radius: 4px;
+
+                span{
+                    color: white;
+                }
+
+                &:hover{
+                    border: 1px solid #0064AC;
+                }
+            }
+
+            .ant-pagination-item-active{
+                background-color: #0BACC6;
+            }
+
+            li{
+                background-color: #185179;
+                border: none;
+                border-radius: 6px;
+
+                a{
+                    color: var(--white);
+                    font-weight: 500;
+                }
+
+                &:hover{
+                    background-color: #0BACC6;
+                }
+            }
         }
     }
 }

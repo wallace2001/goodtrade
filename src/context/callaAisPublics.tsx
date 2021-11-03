@@ -17,11 +17,13 @@ interface CountriesProps {
     country_logo: string;
 }
 
+// Exportando o contexto
 export const CallApisContext = createContext({} as CallApisContextProps);
 
 export const CallApisProvider = ({children} : CallApisProviderProps ) => {
     const [countries, setCountries] = useState<CountriesProps[]>([]);
 
+    // Faz uma busca na API para pegar as linguas
     useEffect(() => {
         const fetchCountries = async() => {
             const { data } = await API.get('A_fu3_ex');

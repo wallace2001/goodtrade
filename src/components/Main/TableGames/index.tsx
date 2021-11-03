@@ -1,11 +1,7 @@
-import { Progress } from 'antd';
 import React, { useState } from 'react';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
-import { BUTTONS_GAME } from '../../../../constants/constants';
 import { light } from '../../../../constants/theme';
-import { getContext } from '../../../context/context.global';
 import { FilteredNames } from '../../../utils/Filter';
-import { MaskTime } from '../../../utils/mask';
 import { BoxGame } from '../BoxGame';
 import styles from './index.module.scss';
 
@@ -28,18 +24,18 @@ interface TableGamesProps{
     item: GamesProps | null;
 }
 
+// TableGames é a parte onde vai aparecer as ligas e os jogos da liga de acordo com o esporte selecionado
 const TableGames = ({item: itemGame}: TableGamesProps) => {
+    // Estados desse components
     const [showMore, setShowMore] = useState<boolean>(false);
     const title = FilteredNames({title: itemGame?.title});
 
-    const {
-        categorie
-    } = getContext();
-
+    // Função para mudar o valor de ver mais da tabela do jogo
     const handleChangeShowMore = () => {
         setShowMore(prevState => !prevState);
     };
 
+    // Se o itemGame for nulo, se não existir dados, retornar nada
     if (itemGame === null){
         return null;
     }

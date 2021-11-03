@@ -29,7 +29,7 @@ export const light = {
         background: 'var(--white)',
     },
     backgroundBoxGameScrollViewLight: {
-        background: '#EFF1FE',
+        background: '#fff',
     },
     backgroundBoxGameScrollViewDark: {
         background: 'linear-gradient(149.43deg, rgba(0, 43, 73, 0.64) 20.12%, rgba(0, 149, 255, 0.08) 98.85%)',
